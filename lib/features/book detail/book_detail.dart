@@ -54,20 +54,33 @@ class BookDetail extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Expanded(
+                      Expanded(
                         flex: 5,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              '200 m.',
-                              style: TextStyle(
-                                fontFamily: 'Poppins-regular',
-                                color: Color(0xFFff9900),
-                                fontSize: 20,
+                            RichText(
+                              text: const TextSpan(
+                                text: '250',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins-black',
+                                  fontSize: 20,
+                                  color: Color(0xFFFF9E0D),
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: ' TMT',
+                                    style: TextStyle(
+                                      // fontFamily: 'Poppins',
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 255, 158, 13),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             // Column(
@@ -158,7 +171,7 @@ class BookDetail extends StatelessWidget {
                       GestureDetector(
                         onTap: () {},
                         child: GestureDetector(
-                            onTap: () {}, child: Constants.rightChevron),
+                            onTap: () {}, child: ConstantsIcons.rightChevron),
                       ),
                     ],
                   ),
@@ -180,7 +193,7 @@ class BookDetail extends StatelessWidget {
                       GestureDetector(
                         onTap: () {},
                         child: GestureDetector(
-                            onTap: () {}, child: Constants.rightChevron),
+                            onTap: () {}, child: ConstantsIcons.rightChevron),
                       ),
                     ],
                   ),
@@ -209,7 +222,8 @@ class BookDetail extends StatelessWidget {
                             // );
                           },
                           child: GestureDetector(
-                              onTap: () {}, child: Constants.rightChevron)),
+                              onTap: () {},
+                              child: ConstantsIcons.rightChevron)),
                     ],
                   ),
                   const SizedBox(

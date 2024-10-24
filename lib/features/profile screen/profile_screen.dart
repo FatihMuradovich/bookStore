@@ -1,5 +1,6 @@
+import 'package:book_store/features/profile%20screen/widgets/language_dialog.dart';
+import 'package:book_store/features/profile%20screen/widgets/log_out_dialog.dart';
 import 'package:book_store/features/profile%20screen/widgets/profile_item.dart';
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -12,9 +13,30 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: const Text(
-          'Profil',
-          style: TextStyle(fontFamily: 'Poppins-regular'),
+        leadingWidth: 300,
+        leading: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Profile name',
+                style: TextStyle(
+                  fontFamily: 'Poppins-regular',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                'muradovichfatih@gmail.com',
+                style: TextStyle(
+                  fontFamily: 'Poppins-regular',
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -48,7 +70,14 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Habarlaşmak',
               ),
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/myOrders'),
+                ontap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return const LanguageDialog();
+                    },
+                  );
+                },
                 icon: 'assets/icons/globe_light.png',
                 title: 'Dil çalyşmak',
               ),
@@ -57,7 +86,15 @@ class ProfileScreen extends StatelessWidget {
                 icon: 'assets/icons/rule_light.png',
                 title: 'Eltip bermek we töleg',
               ),
-              const ProfileItem(
+              ProfileItem(
+                ontap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return const LogOutDialog();
+                    },
+                  );
+                },
                 icon: 'assets/icons/sign_light.png',
                 title: 'Ulgamdan çykmak',
               ),
@@ -78,8 +115,4 @@ class ProfileScreen extends StatelessWidget {
       ),
     );
   }
-
-  // aboutUser() {
-  //   return
-  // }
 }

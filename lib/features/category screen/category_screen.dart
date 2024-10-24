@@ -28,43 +28,40 @@ class CategoryScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {},
-                      child: Card(
-                        color: Colors.white,
-                        elevation: 0.1,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                'Kategoriya',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins-regular',
-                                  fontSize: 14,
-                                ),
-                              ),
-                              Icon(
-                                FluentSystemIcons
-                                    .ic_fluent_chevron_right_filled,
-                                color: Constants.customBlueColor,
-                              )
-                            ],
-                          ),
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {},
+              child: Card(
+                color: Colors.white,
+                elevation: 0.1,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Kategoriya',
+                        style: TextStyle(
+                          fontFamily: 'Poppins-regular',
+                          fontSize: 14,
                         ),
                       ),
-                    );
-                  }),
-            ],
-          )),
+                      Icon(
+                        FluentSystemIcons.ic_fluent_chevron_right_filled,
+                        color: ConstantsColor.customBlueColor,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

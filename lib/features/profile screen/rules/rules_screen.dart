@@ -9,9 +9,12 @@ class RulesScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('Şertler',style: TextStyle(
+        title: const Text(
+          'Eltip bermek we töleg',
+          style: TextStyle(
             fontFamily: 'Poppins-regular',
-          ),),
+          ),
+        ),
       ),
     );
   }

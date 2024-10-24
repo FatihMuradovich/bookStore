@@ -13,25 +13,7 @@ class AddAdressButton extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            showModalBottomSheet(
-              isDismissible: true,
-              context: context,
-              backgroundColor: Colors.white,
-              builder: (context) {
-                return const SizedBox(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Täze salgy goş'),
-                        ],
-                      )
-                    ],
-                  ),
-                );
-              },
-            );
+            Navigator.pushNamed(context, '/newAddAdress');
           },
           child: Container(
             decoration: const BoxDecoration(

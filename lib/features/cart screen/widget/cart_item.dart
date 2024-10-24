@@ -81,7 +81,7 @@ class CartItem extends StatelessWidget {
                             ),
                             children: [
                               TextSpan(
-                                text: ' m.',
+                                text: ' TMT',
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.bold,
@@ -106,7 +106,7 @@ class CartItem extends StatelessWidget {
                                 onTap: () {},
                                 child: Icon(
                                   FluentSystemIcons.ic_fluent_remove_filled,
-                                  color: Constants.customBlueColor,
+                                  color: ConstantsColor.customBlueColor,
                                   size: 20,
                                 ),
                               ),
@@ -116,7 +116,7 @@ class CartItem extends StatelessWidget {
                               Text(
                                 '1',
                                 style: TextStyle(
-                                    color: Constants.customBlueColor,
+                                    color: ConstantsColor.customBlueColor,
                                     fontFamily: 'Poppins-black',
                                     fontSize: 18),
                               ),
@@ -127,7 +127,7 @@ class CartItem extends StatelessWidget {
                                 onTap: () {},
                                 child: Icon(
                                   FluentSystemIcons.ic_fluent_add_filled,
-                                  color: Constants.customBlueColor,
+                                  color: ConstantsColor.customBlueColor,
                                   size: 20,
                                 ),
                               )

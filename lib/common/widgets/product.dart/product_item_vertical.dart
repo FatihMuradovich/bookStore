@@ -140,12 +140,11 @@ class ProductItemVertical extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Poppins-black',
                         fontSize: 16,
-                        fontWeight: FontWeight.bold,
                         color: Color(0xFFFF9E0D),
                       ),
                       children: [
                         TextSpan(
-                          text: ' m.',
+                          text: ' TMT',
                           style: TextStyle(
                             // fontFamily: 'Poppins',
                             fontSize: 14,

@@ -4,10 +4,10 @@ import 'package:book_store/common/splash_screen.dart';
 import 'package:book_store/features/home%20screen/notification_screen.dart';
 import 'package:book_store/features/profile%20screen/about%20us/about_us.dart';
 import 'package:book_store/features/profile%20screen/adress%20/adress.dart';
+import 'package:book_store/features/profile%20screen/adress%20/new_add_adress.dart';
 import 'package:book_store/features/profile%20screen/message/message.dart';
 import 'package:book_store/features/profile%20screen/my%20orders/my_orders.dart';
 import 'package:book_store/features/profile%20screen/rules/rules_screen.dart';
-import 'package:book_store/features/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/message': (context) => const MessageScreen(),
         '/rule': (context) => const RulesScreen(),
         '/customNavBar': (context) => const CustomNavBar(),
+        '/newAddAdress': (context) => const NewAddAdress(),
         // '/adress': (context) => const AdressScreen(),
       },
     );

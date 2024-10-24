@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
         onTap: () {
           Navigator.pop(context);
         },
-        child: Constants.leftChevron,
+        child: ConstantsIcons.leftChevron,
       ),
       actions: [
         Padding(

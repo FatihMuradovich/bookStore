@@ -1,8 +1,8 @@
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
 
-class NotificationScreen extends StatelessWidget {
-  const NotificationScreen({super.key});
+class NewAddAdress extends StatelessWidget {
+  const NewAddAdress({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,19 +12,25 @@ class NotificationScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: ConstantsIcons.leftChevron),
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: ConstantsIcons.leftChevron,
+        ),
         title: const Text(
-          'Bildirişler',
+          'Täze salgy goş',
           style: TextStyle(
             fontFamily: 'Poppins-regular',
           ),
         ),
       ),
       body: const Column(
-        children: [],
+        children: [
+          Text(
+            'Salgy maglumatlary,',
+          ),
+          Card()
+        ],
       ),
     );
   }

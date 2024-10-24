@@ -1,3 +1,4 @@
+import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/cart%20screen/cart_screen.dart';
 import 'package:book_store/features/category%20screen/category_screen.dart';
 import 'package:book_store/features/favorite%20screen/favorite_screen.dart';
@@ -45,8 +46,8 @@ class _CustomNavBarState extends State<CustomNavBar> {
             },
             backgroundColor: Colors.white,
             activeColor: Colors.white,
-            color: const Color(0xFF282846),
-            tabBackgroundColor: const Color(0xFF282846),
+            color: ConstantsColor.customBlueColor,
+            tabBackgroundColor: ConstantsColor.customBlueColor,
             gap: 5,
             padding: const EdgeInsets.all(6),
             tabs: const [

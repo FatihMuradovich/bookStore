@@ -24,11 +24,11 @@ class KitapOzellik extends StatelessWidget {
               children: [
                 Text(
                   'Haryt kody',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
                   'KTCHP_1001',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
               ],
             ),
@@ -40,11 +40,11 @@ class KitapOzellik extends StatelessWidget {
               children: [
                 Text(
                   'Çaphana',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
                   'Türkiye iş bankası',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
               ],
             ),
@@ -56,11 +56,11 @@ class KitapOzellik extends StatelessWidget {
               children: [
                 Text(
                   'Kitabyň dili',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
                   'Türk dilinde',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
               ],
             ),
@@ -72,11 +72,11 @@ class KitapOzellik extends StatelessWidget {
               children: [
                 Text(
                   'Book cover',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
                   'Gaty',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
               ],
             ),
@@ -88,11 +88,11 @@ class KitapOzellik extends StatelessWidget {
               children: [
                 Text(
                   'Çap ýyly',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
                   '2002',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
               ],
             ),
@@ -104,11 +104,11 @@ class KitapOzellik extends StatelessWidget {
               children: [
                 Text(
                   'Sahypa',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
                   '240',
-                  style: Constants.kitapOzellik,
+                  style: ConstantsTextStyle.kitapOzellik,
                 ),
               ],
             ),

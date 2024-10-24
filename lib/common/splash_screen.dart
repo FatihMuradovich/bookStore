@@ -1,4 +1,3 @@
-import 'package:book_store/common/widgets/custom_navbar.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

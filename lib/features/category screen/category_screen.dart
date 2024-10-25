@@ -2,6 +2,7 @@ import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/home%20screen/widgets/search_text_field.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -13,10 +14,11 @@ class CategoryScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: const Text(
+        title: Text(
           'Kategoriýalar',
           style: TextStyle(
             fontFamily: 'Poppins-regular',
+            fontSize: 18.sp,
           ),
         ),
         bottom: const PreferredSize(
@@ -43,16 +45,17 @@ class CategoryScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         'Kategoriya',
                         style: TextStyle(
                           fontFamily: 'Poppins-regular',
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
                       Icon(
                         FluentSystemIcons.ic_fluent_chevron_right_filled,
                         color: ConstantsColor.customBlueColor,
+                        size: 16.sp,
                       )
                     ],
                   ),

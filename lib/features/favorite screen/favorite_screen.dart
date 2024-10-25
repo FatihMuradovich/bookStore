@@ -1,5 +1,6 @@
 import 'package:book_store/common/widgets/product.dart/product_item_vertical.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});
@@ -11,10 +12,11 @@ class FavoriteScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        title: const Text(
+        title: Text(
           'Halanlarym',
           style: TextStyle(
             fontFamily: 'Poppins-regular',
+            fontSize: 18.sp,
           ),
         ),
       ),
@@ -22,9 +24,9 @@ class FavoriteScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
           itemCount: 5,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisExtent: 260,
+            mainAxisExtent: 230.h,
             crossAxisSpacing: 5,
             mainAxisSpacing: 5,
           ),

@@ -1,6 +1,6 @@
-import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/cart%20screen/widget/order_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderBottom extends StatelessWidget {
   const OrderBottom({
@@ -10,7 +10,7 @@ class OrderBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 65.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(
@@ -35,20 +35,34 @@ class OrderBottom extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'Umumy jemi:' ' (1)',
                     style: TextStyle(
                       fontFamily: 'Poppins-regular',
-                      fontSize: 14,
+                      fontSize: 14.sp,
                     ),
                   ),
-                  Text(
-                    '413.0 TMT',
-                    style: TextStyle(
+                  RichText(
+                    text: TextSpan(
+                      text: '413',
+                      style: TextStyle(
                         fontFamily: 'Poppins-regular',
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: ConstantsColor.customOrageColor),
+                        fontSize: 18.sp,
+                        color: const Color(0xFFFF9E0D),
+                      ),
+                      children: [
+                        TextSpan(
+                          text: ' TMT',
+                          style: TextStyle(
+                            fontFamily: 'Poppins-regular',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color.fromARGB(255, 255, 158, 13),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

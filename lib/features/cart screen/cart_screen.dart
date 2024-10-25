@@ -1,7 +1,9 @@
+import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/cart%20screen/widget/cart_item.dart';
 import 'package:book_store/features/cart%20screen/widget/order_bottom.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -13,18 +15,20 @@ class CartScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: const Text(
+        title: Text(
           'Sebet',
           style: TextStyle(
             fontFamily: 'Poppins-regular',
+            fontSize: 18.sp,
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 16),
             child: Icon(
               FluentSystemIcons.ic_fluent_delete_filled,
-              color: Color(0xFFFF9E0D),
+              color: ConstantsColor.customOrageColor,
+              size: 18.h,
             ),
           ),
         ],

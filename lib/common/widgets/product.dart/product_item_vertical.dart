@@ -1,6 +1,7 @@
 import 'package:book_store/features/book%20detail/book_detail.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProductItemVertical extends StatelessWidget {
@@ -28,7 +29,7 @@ class ProductItemVertical extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: 140,
+                    height: 120.h,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade50,
                       borderRadius: BorderRadius.circular(10),
@@ -48,15 +49,15 @@ class ProductItemVertical extends StatelessWidget {
                           Radius.circular(5),
                         ),
                       ),
-                      child: const Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 2, horizontal: 4),
                         child: Text(
                           '20%',
                           style: TextStyle(
-                            fontFamily: 'Poppins-black',
-                            color: Colors.white,
-                          ),
+                              fontFamily: 'Poppins-black',
+                              color: Colors.white,
+                              fontSize: 12.sp),
                         ),
                       ),
                     ),
@@ -84,79 +85,80 @@ class ProductItemVertical extends StatelessWidget {
                   // ),
                 ],
               ),
-              const SizedBox(
-                height: 5,
+              SizedBox(
+                height: 5.h,
               ),
-              const Text(
+              Text(
                 'Dorian Grayin Portresi',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontFamily: 'Poppins-black', fontSize: 14),
+                style: TextStyle(fontFamily: 'Poppins-black', fontSize: 12.sp),
               ),
-              const Text(
+              Text(
                 'Oscar Wilde',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 12, fontFamily: 'Poppins-regular'),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              const Row(
-                children: [
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_filled,
-                    size: 16,
-                    color: Colors.amber,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_filled,
-                    size: 16,
-                    color: Colors.amber,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_regular,
-                    size: 16,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_regular,
-                    size: 16,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_regular,
-                    size: 16,
-                  ),
-                ],
+                style:
+                    TextStyle(fontSize: 10.sp, fontFamily: 'Poppins-regular'),
               ),
               const SizedBox(
                 height: 5,
               ),
               Row(
+                children: [
+                  Icon(
+                    FluentSystemIcons.ic_fluent_star_filled,
+                    size: 16.w,
+                    color: Colors.amber,
+                  ),
+                  Icon(
+                    FluentSystemIcons.ic_fluent_star_filled,
+                    size: 16.w,
+                    color: Colors.amber,
+                  ),
+                  Icon(
+                    FluentSystemIcons.ic_fluent_star_regular,
+                    size: 16.w,
+                  ),
+                  Icon(
+                    FluentSystemIcons.ic_fluent_star_regular,
+                    size: 16.w,
+                  ),
+                  Icon(
+                    FluentSystemIcons.ic_fluent_star_regular,
+                    size: 16.w,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       text: '250',
                       style: TextStyle(
                         fontFamily: 'Poppins-black',
-                        fontSize: 16,
-                        color: Color(0xFFFF9E0D),
+                        fontSize: 16.sp,
+                        color: const Color(0xFFFF9E0D),
                       ),
                       children: [
                         TextSpan(
                           text: ' TMT',
                           style: TextStyle(
                             // fontFamily: 'Poppins',
-                            fontSize: 14,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 255, 158, 13),
+                            color: const Color.fromARGB(255, 255, 158, 13),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    width: 5,
+                  SizedBox(
+                    width: 5.w,
                   ),
                   GestureDetector(
                     onTap: () {},
@@ -164,9 +166,9 @@ class ProductItemVertical extends StatelessWidget {
                       padding: const EdgeInsets.all(3),
                       decoration: const BoxDecoration(
                           shape: BoxShape.circle, color: Colors.transparent),
-                      child: const Icon(
+                      child: Icon(
                         FontAwesomeIcons.basketShopping,
-                        size: 18,
+                        size: 16.h,
                       ),
                     ),
                   ),

@@ -1,7 +1,9 @@
+import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/profile%20screen/my%20orders/completed_order.dart';
 import 'package:book_store/features/profile%20screen/my%20orders/continue_order.dart';
 import 'package:book_store/features/profile%20screen/my%20orders/widget/tab_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyOrdersScreen extends StatefulWidget {
   const MyOrdersScreen({super.key});
@@ -32,10 +34,17 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: const Text(
+        automaticallyImplyLeading: false,
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: ConstantsIcons.leftChevron),
+        title: Text(
           'Sargytlarym',
           style: TextStyle(
             fontFamily: 'Poppins-regular',
+            fontSize: 18.sp,
           ),
         ),
         bottom: PreferredSize(
@@ -45,7 +54,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>
                 Radius.circular(10),
               ),
               child: Container(
-                height: 40,
+                height: 40.w,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(

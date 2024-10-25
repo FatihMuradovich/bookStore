@@ -1,5 +1,6 @@
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewAddAdress extends StatelessWidget {
   const NewAddAdress({super.key});
@@ -17,11 +18,9 @@ class NewAddAdress extends StatelessWidget {
           },
           child: ConstantsIcons.leftChevron,
         ),
-        title: const Text(
+        title: Text(
           'Täze salgy goş',
-          style: TextStyle(
-            fontFamily: 'Poppins-regular',
-          ),
+          style: TextStyle(fontFamily: 'Poppins-regular', fontSize: 18.sp),
         ),
       ),
       body: const Column(

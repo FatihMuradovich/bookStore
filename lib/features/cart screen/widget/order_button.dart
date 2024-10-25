@@ -1,5 +1,6 @@
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderButton extends StatelessWidget {
   const OrderButton({
@@ -14,18 +15,18 @@ class OrderButton extends StatelessWidget {
         decoration: BoxDecoration(
             color: ConstantsColor.customOrageColor,
             borderRadius: BorderRadius.circular(10)),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
             vertical: 10,
             horizontal: 25,
           ),
           child: Text(
-            'Sargyt etmek',
+            'Sargydy tamamla',
             style: TextStyle(
-              fontFamily: 'Poppins-regular',
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+                fontFamily: 'Poppins-regular',
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 12.sp),
           ),
         ),
       ),

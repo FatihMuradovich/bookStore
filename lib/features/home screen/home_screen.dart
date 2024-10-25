@@ -2,6 +2,7 @@ import 'package:book_store/common/custom_banner.dart';
 import 'package:book_store/features/home%20screen/widgets/home_screen_list_view.dart';
 import 'package:book_store/features/home%20screen/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'widgets/home_screen_category.dart';
 
@@ -24,16 +25,16 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color(0xFFff9900),
         centerTitle: false,
         title: Image.asset(
-          height: 90,
-          width: 90,
+          width: 90.w,
           'assets/logo/logo 1.PNG',
         ),
         actions: [
           IconButton(
             onPressed: () => Navigator.pushNamed(context, '/notification'),
-            icon: const Icon(
+            icon: Icon(
               Icons.notifications,
               color: Colors.white,
+              size: 20.h,
             ),
           ),
         ],
@@ -46,13 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.only(top: 15, left: 12, right: 12),
               child: SearchTextField(),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             // Banner
             const CustomBanner(),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 15.h,
             ),
             // Taze gelen kitaplar
             HomeScreenCategory(
@@ -60,11 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
               nextPage: () {},
             ),
 
-            const Padding(
-              padding: EdgeInsets.only(top: 15, bottom: 15),
+            Padding(
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 260,
-                child: HomeScreenListView(),
+                height: 230.h,
+                child: const HomeScreenListView(),
               ),
             ),
 
@@ -74,11 +75,11 @@ class _HomeScreenState extends State<HomeScreen> {
               nextPage: () {},
             ),
 
-            const Padding(
-              padding: EdgeInsets.only(top: 15, bottom: 15),
+            Padding(
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 260,
-                child: HomeScreenListView(),
+                height: 230.h,
+                child: const HomeScreenListView(),
               ),
             ),
 
@@ -88,11 +89,11 @@ class _HomeScreenState extends State<HomeScreen> {
               nextPage: () {},
             ),
 
-            const Padding(
-              padding: EdgeInsets.only(top: 15, bottom: 15),
+            Padding(
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 260,
-                child: HomeScreenListView(),
+                height: 230.h,
+                child: const HomeScreenListView(),
               ),
             ),
           ],

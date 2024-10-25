@@ -1,5 +1,6 @@
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LogOutDialog extends StatelessWidget {
   const LogOutDialog({
@@ -16,6 +17,7 @@ class LogOutDialog extends StatelessWidget {
         color: ConstantsColor.customBlueColor,
         fontFamily: 'Poppins-regular',
         fontWeight: FontWeight.bold,
+        fontSize: 14.sp,
       ),
       children: [
         Padding(
@@ -35,15 +37,15 @@ class LogOutDialog extends StatelessWidget {
                   child: Text(
                     'Ýok',
                     style: TextStyle(
-                      color: ConstantsColor.customBlueColor,
-                      fontFamily: 'Poppins-regular',
-                      fontWeight: FontWeight.bold,
-                    ),
+                        color: ConstantsColor.customBlueColor,
+                        fontFamily: 'Poppins-regular',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14.sp),
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 5,
+              SizedBox(
+                width: 5.w,
               ),
               Expanded(
                 child: ElevatedButton(
@@ -53,13 +55,13 @@ class LogOutDialog extends StatelessWidget {
                       ),
                       backgroundColor: ConstantsColor.customOrageColor),
                   onPressed: () {},
-                  child: const Text(
+                  child: Text(
                     'Hawa',
                     style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Poppins-regular',
-                      fontWeight: FontWeight.bold,
-                    ),
+                        color: Colors.white,
+                        fontFamily: 'Poppins-regular',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14.sp),
                   ),
                 ),
               ),

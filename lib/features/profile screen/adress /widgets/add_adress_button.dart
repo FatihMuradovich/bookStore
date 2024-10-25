@@ -1,5 +1,7 @@
+import 'package:book_store/common/constants.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddAdressButton extends StatelessWidget {
   const AddAdressButton({
@@ -16,14 +18,14 @@ class AddAdressButton extends StatelessWidget {
             Navigator.pushNamed(context, '/newAddAdress');
           },
           child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFFFF9E0D),
-              borderRadius: BorderRadius.all(
+            decoration: BoxDecoration(
+              color: ConstantsColor.customOrageColor,
+              borderRadius: const BorderRadius.all(
                 Radius.circular(5),
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 25,
                 vertical: 10,
               ),
@@ -32,20 +34,21 @@ class AddAdressButton extends StatelessWidget {
                 children: [
                   Icon(
                     FluentSystemIcons.ic_fluent_add_filled,
-                    size: 22,
+                    size: 20.h,
                     color: Colors.white,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 5.w,
                   ),
                   Text(
                     'Täze salgy goş',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Poppins-regular',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  )
+                      color: Colors.white,
+                      fontFamily: 'Poppins-regular',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.sp,
+                    ),
+                  ),
                 ],
               ),
             ),

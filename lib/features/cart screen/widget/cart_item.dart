@@ -1,6 +1,7 @@
 import 'package:book_store/common/constants.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({super.key});
@@ -13,7 +14,7 @@ class CartItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          height: 90,
+          height: 75.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -22,8 +23,8 @@ class CartItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 90,
-                width: 90,
+                height: 90.w,
+                width: 90.w,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade50,
                   borderRadius: BorderRadius.circular(10),
@@ -44,26 +45,27 @@ class CartItem extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Dorian Grayin Portresi',
                           style: TextStyle(
-                              fontFamily: 'Poppins-black', fontSize: 14),
+                              fontFamily: 'Poppins-black', fontSize: 12.sp),
                         ),
                         GestureDetector(
                           onTap: () {},
-                          child: const Icon(
+                          child: Icon(
                             FluentSystemIcons.ic_fluent_delete_filled,
-                            color: Color(0xFFFF9E0D),
+                            color: ConstantsColor.customOrageColor,
+                            size: 18.h,
                           ),
                         ),
                       ],
                     ),
-                    const Expanded(
+                    Expanded(
                       child: Text(
                         'Oscar Wilde',
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                            fontSize: 12, fontFamily: 'Poppins-regular'),
+                            fontSize: 10.sp, fontFamily: 'Poppins-regular'),
                       ),
                     ),
                     Row(
@@ -71,13 +73,13 @@ class CartItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         RichText(
-                          text: const TextSpan(
+                          text: TextSpan(
                             text: '205',
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF282846),
-                              fontSize: 18,
+                              color: const Color(0xFF282846),
+                              fontSize: 16.sp,
                             ),
                             children: [
                               TextSpan(
@@ -85,8 +87,8 @@ class CartItem extends StatelessWidget {
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF282846),
-                                  fontSize: 14,
+                                  color: const Color(0xFF282846),
+                                  fontSize: 12.sp,
                                 ),
                               ),
                             ],
@@ -107,28 +109,28 @@ class CartItem extends StatelessWidget {
                                 child: Icon(
                                   FluentSystemIcons.ic_fluent_remove_filled,
                                   color: ConstantsColor.customBlueColor,
-                                  size: 20,
+                                  size: 18.h,
                                 ),
                               ),
-                              const SizedBox(
-                                width: 8,
+                              SizedBox(
+                                width: 8.w,
                               ),
                               Text(
                                 '1',
                                 style: TextStyle(
                                     color: ConstantsColor.customBlueColor,
                                     fontFamily: 'Poppins-black',
-                                    fontSize: 18),
+                                    fontSize: 18.sp),
                               ),
-                              const SizedBox(
-                                width: 8,
+                              SizedBox(
+                                width: 8.w,
                               ),
                               GestureDetector(
                                 onTap: () {},
                                 child: Icon(
                                   FluentSystemIcons.ic_fluent_add_filled,
                                   color: ConstantsColor.customBlueColor,
-                                  size: 20,
+                                  size: 18.h,
                                 ),
                               )
                             ],

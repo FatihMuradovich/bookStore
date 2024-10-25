@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TabItem extends StatelessWidget {
   final String title;
@@ -14,30 +15,11 @@ class TabItem extends StatelessWidget {
           Text(
             title,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Poppins-regular',
+              fontSize: 13.sp,
             ),
           ),
-          count > 0
-              ? Container(
-                  margin: const EdgeInsetsDirectional.only(start: 5),
-                  padding: const EdgeInsets.all(3),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Text(
-                      count > 9 ? '9+' : count.toString(),
-                      style: const TextStyle(
-                          color: Colors.black, fontFamily: 'Poppins-regular'),
-                    ),
-                  ),
-                )
-              : const SizedBox(
-                  width: 0,
-                  height: 0,
-                )
         ],
       ),
     );

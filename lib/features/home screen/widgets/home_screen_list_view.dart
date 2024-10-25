@@ -1,5 +1,6 @@
 import 'package:book_store/common/widgets/product.dart/product_item_vertical.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreenListView extends StatelessWidget {
   const HomeScreenListView({
@@ -13,7 +14,7 @@ class HomeScreenListView extends StatelessWidget {
       child: ListView.builder(
           // cacheExtent: 105,
           itemCount: 5,
-          itemExtent: 170,
+          itemExtent: 150.h,
           scrollDirection: Axis.horizontal,
           //physics: NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {

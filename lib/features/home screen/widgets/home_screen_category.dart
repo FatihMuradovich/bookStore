@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreenCategory extends StatelessWidget {
   const HomeScreenCategory({
@@ -25,16 +26,16 @@ class HomeScreenCategory extends StatelessWidget {
           children: [
             Text(
               text,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'Poppins-regular',
-                fontSize: 16,
+                fontSize: 16.sp,
               ),
             ),
             GestureDetector(
               onTap: nextPage,
-              child: const Icon(
+              child: Icon(
                 FluentSystemIcons.ic_fluent_chevron_right_filled,
-                size: 20,
+                size: 20.sp,
               ),
             ),
           ],

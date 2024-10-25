@@ -10,7 +10,7 @@ class ProductItemHorizontal extends StatelessWidget {
       color: Colors.white,
       elevation: 0.1,
       child: SizedBox(
-        width: 300,
+        width: 270,
         child: Row(
           children: [
             SizedBox(

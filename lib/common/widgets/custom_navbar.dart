@@ -19,7 +19,9 @@ class CustomNavBar extends StatefulWidget {
 }
 
 class _CustomNavBarState extends State<CustomNavBar> {
+  
   int navBarIndex = 0;
+
   List navBody = [
     const HomeScreen(),
     const CategoryScreen(),

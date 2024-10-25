@@ -1,5 +1,6 @@
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LanguageDialog extends StatelessWidget {
   const LanguageDialog({
@@ -14,22 +15,22 @@ class LanguageDialog extends StatelessWidget {
       children: [
         Column(
           children: [
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             Image.asset(
               'assets/icons/globe_light.png',
-              height: 30,
+              height: 30.h,
             ),
-            const SizedBox(
-              height: 5,
+            SizedBox(
+              height: 5.h,
             ),
             const Text(
               'Dili saýlaň',
               style: TextStyle(fontFamily: 'Poppins-regular', fontSize: 16),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             ElevatedButton(
               onPressed: () {},
@@ -39,8 +40,8 @@ class LanguageDialog extends StatelessWidget {
                 style: ConstantsTextStyle.languageDialogText,
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             ElevatedButton(
               onPressed: () {},
@@ -50,8 +51,8 @@ class LanguageDialog extends StatelessWidget {
                 style: ConstantsTextStyle.languageDialogText,
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
           ],
         )

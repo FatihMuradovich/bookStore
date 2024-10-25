@@ -1,22 +1,27 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ConstantsIcons {
-  static Icon leftChevron =
-      const Icon(FluentSystemIcons.ic_fluent_chevron_left_filled);
-  static Icon rightChevron =
-      const Icon(FluentSystemIcons.ic_fluent_chevron_right_filled);
+  static Icon leftChevron = Icon(
+    FluentSystemIcons.ic_fluent_chevron_left_filled,
+    size: 20.h,
+  );
+  static Icon rightChevron = Icon(
+    FluentSystemIcons.ic_fluent_chevron_right_filled,
+    size: 20.h,
+  );
 }
 
 class ConstantsTextStyle {
-  static TextStyle languageDialogText = const TextStyle(
+  static TextStyle languageDialogText = TextStyle(
     color: Colors.white,
     fontFamily: 'Poppins-regular',
-    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    fontSize: 14.sp,
   );
-  static TextStyle kitapOzellik = const TextStyle(
-    fontFamily: 'Poppins-regular',
-  );
+  static TextStyle kitapOzellik =
+      TextStyle(fontFamily: 'Poppins-regular', fontSize: 12.sp);
 }
 
 class ConstantsButtonStyle {
@@ -25,9 +30,9 @@ class ConstantsButtonStyle {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),
     ),
-    backgroundColor: const Color(0xFFFF9E0D),
+    backgroundColor: ConstantsColor.customOrageColor,
     padding: const EdgeInsets.all(10),
-    fixedSize: const Size(300, 50),
+    fixedSize: Size(250.w, 50.h),
   );
 }
 

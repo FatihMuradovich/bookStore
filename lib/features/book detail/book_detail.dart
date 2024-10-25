@@ -5,6 +5,7 @@ import 'package:book_store/features/book%20detail/widgets/kitap_ozellik.dart';
 import 'package:book_store/features/book%20detail/widgets/urun_degerlendirme.dart';
 import 'package:book_store/features/book%20detail/widgets/urun_soru_cevaplari.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookDetail extends StatelessWidget {
   const BookDetail({super.key});
@@ -23,7 +24,7 @@ class BookDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
@@ -35,7 +36,7 @@ class BookDetail extends StatelessWidget {
                               maxLines: 1,
                               style: TextStyle(
                                 fontFamily: 'Poppins-black',
-                                fontSize: 18,
+                                fontSize: 16.sp,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
@@ -43,7 +44,7 @@ class BookDetail extends StatelessWidget {
                               'Oscar Wilde',
                               style: TextStyle(
                                 fontFamily: 'Poppins-regular',
-                                fontSize: 14,
+                                fontSize: 14.sp,
                               ),
                             ),
                           ],
@@ -60,28 +61,29 @@ class BookDetail extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             RichText(
-                              text: const TextSpan(
+                              text: TextSpan(
                                 text: '250',
                                 style: TextStyle(
-                                  fontFamily: 'Poppins-black',
-                                  fontSize: 20,
-                                  color: Color(0xFFFF9E0D),
+                                  fontFamily: 'Poppins-regular',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.sp,
+                                  color: const Color(0xFFFF9E0D),
                                 ),
                                 children: [
                                   TextSpan(
                                     text: ' TMT',
                                     style: TextStyle(
-                                      // fontFamily: 'Poppins',
-                                      fontSize: 18,
+                                      fontFamily: 'Poppin-regular',
+                                      fontSize: 14.sp,
                                       fontWeight: FontWeight.bold,
-                                      color: Color.fromARGB(255, 255, 158, 13),
+                                      color: ConstantsColor.customOrageColor,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                            const SizedBox(
-                              width: 5,
+                            SizedBox(
+                              width: 5.w,
                             ),
                             // Column(
                             //   children: [
@@ -110,47 +112,54 @@ class BookDetail extends StatelessWidget {
                         flex: 5,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFff9900),
+                            elevation: 0.5,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            backgroundColor: const Color(0xFFFF9E0D),
+                            padding: const EdgeInsets.all(10),
+                            fixedSize: Size(0, 30.h),
                           ),
                           onPressed: () async {
                             // DbHelper.instance
                             //     .insetBook(widget.book..quantity = 1)
                             //     .then((value) => showTopToast());
                           },
-                          child: const Text(
+                          child: Text(
                             'Satyn al',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'Poppins-regular',
-                                fontWeight: FontWeight.w700),
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14.sp),
                           ),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 20.h,
                   ),
 
-                  const Text(
-                    'Description',
+                  Text(
+                    'Kitap barada',
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16.sp,
                         fontFamily: 'Poppins-regular',
                         fontWeight: FontWeight.w800),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 10.h,
                   ),
-                  const Text(
+                  Text(
                     style: TextStyle(
-                      fontFamily: 'Poppins-regular',
-                      color: Colors.black54,
-                    ),
+                        fontFamily: 'Poppins-regular',
+                        color: Colors.black54,
+                        fontSize: 12.sp),
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 20.h,
                   ),
                   // kitap ozellikleri
                   const KitapOzellik(),
@@ -160,10 +169,10 @@ class BookDetail extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         'Ürün Soru ve Cevaplari',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16.sp,
                           fontFamily: 'Poppins-regular',
                           fontWeight: FontWeight.w800,
                         ),
@@ -176,16 +185,16 @@ class BookDetail extends StatelessWidget {
                     ],
                   ),
                   const UrunSoruCevaplari(),
-                  const Divider(
-                    height: 30,
+                  Divider(
+                    height: 30.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         'Ürün değerlendirme',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16.sp,
                           fontFamily: 'Poppins-regular',
                           fontWeight: FontWeight.w800,
                         ),
@@ -198,17 +207,17 @@ class BookDetail extends StatelessWidget {
                     ],
                   ),
                   const UrunDegerlendirme(),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 20.h,
                   ),
                   // Author's other books
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         'Author\'s other books',
                         style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16.sp,
                             fontFamily: 'Poppins-regular',
                             fontWeight: FontWeight.w800),
                       ),
@@ -230,11 +239,11 @@ class BookDetail extends StatelessWidget {
                     height: 10,
                   ),
                   SizedBox(
-                    height: 260,
+                    height: 230.h,
                     child: ListView.builder(
                       //controller: _controller,
                       shrinkWrap: true,
-                      itemExtent: 180,
+                      itemExtent: 150.w,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         return const Padding(

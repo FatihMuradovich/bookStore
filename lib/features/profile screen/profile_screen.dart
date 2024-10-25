@@ -2,6 +2,7 @@ import 'package:book_store/features/profile%20screen/widgets/language_dialog.dar
 import 'package:book_store/features/profile%20screen/widgets/log_out_dialog.dart';
 import 'package:book_store/features/profile%20screen/widgets/profile_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -14,8 +15,8 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         leadingWidth: 300,
-        leading: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+        leading: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -25,14 +26,14 @@ class ProfileScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Poppins-regular',
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                 ),
               ),
               Text(
                 'muradovichfatih@gmail.com',
                 style: TextStyle(
                   fontFamily: 'Poppins-regular',
-                  fontSize: 14,
+                  fontSize: 14.sp,
                 ),
               ),
             ],
@@ -101,14 +102,14 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'Wersiýa',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontFamily: 'Poppins-regular',
-                ),
-                //const TextStyle(fontFamily: 'Quicksand', fontSize: 16),
-              )
+              // Text(
+              //   'Wersiýa',
+              //   style: TextStyle(
+              //     fontSize: 14.sp,
+              //     fontFamily: 'Poppins-regular',
+              //   ),
+              //const TextStyle(fontFamily: 'Quicksand', fontSize: 16),
+              // )
             ],
           ),
         ),

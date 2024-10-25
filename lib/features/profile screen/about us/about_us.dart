@@ -1,4 +1,6 @@
+import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -9,16 +11,23 @@ class AboutUsScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text(
+        automaticallyImplyLeading: false,
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: ConstantsIcons.leftChevron),
+        title: Text(
           'Biz barada',
           style: TextStyle(
             fontFamily: 'Poppins-regular',
+            fontSize: 18.sp,
           ),
         ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,19 +38,22 @@ class AboutUsScreen extends StatelessWidget {
                     'Mobil telefon belgimiz:',
                     style: TextStyle(
                       fontFamily: 'Poppins-regular',
+                      fontSize: 12.sp,
                     ),
                   ),
                   Text(
                     '+993 64 77-82-40',
                     style: TextStyle(
-                        color: Color(0xFFff9900),
-                        fontFamily: 'Poppins-regular',
-                        fontWeight: FontWeight.bold),
+                      color: ConstantsColor.customOrageColor,
+                      fontFamily: 'Poppins-regular',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,19 +62,22 @@ class AboutUsScreen extends StatelessWidget {
                     'E-mail:',
                     style: TextStyle(
                       fontFamily: 'Poppins-regular',
+                      fontSize: 12.sp,
                     ),
                   ),
                   Text(
                     'kitapchesmesi@gmail.com',
                     style: TextStyle(
-                        color: Color(0xFFff9900),
-                        fontFamily: 'Poppins-regular',
-                        fontWeight: FontWeight.bold),
+                      color: ConstantsColor.customOrageColor,
+                      fontFamily: 'Poppins-regular',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,19 +86,22 @@ class AboutUsScreen extends StatelessWidget {
                     'Instagram:',
                     style: TextStyle(
                       fontFamily: 'Poppins-regular',
+                      fontSize: 12.sp,
                     ),
                   ),
                   Text(
                     '@kitapchesmesi',
                     style: TextStyle(
-                        color: Color(0xFFff9900),
-                        fontFamily: 'Poppins-regular',
-                        fontWeight: FontWeight.bold),
+                      color: ConstantsColor.customOrageColor,
+                      fontFamily: 'Poppins-regular',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,35 +110,41 @@ class AboutUsScreen extends StatelessWidget {
                     'TikTok:',
                     style: TextStyle(
                       fontFamily: 'Poppins-regular',
+                      fontSize: 12.sp,
                     ),
                   ),
                   Text(
                     '@kitapchesmesi',
                     style: TextStyle(
-                        color: Color(0xFFff9900),
-                        fontFamily: 'Poppins-regular',
-                        fontWeight: FontWeight.bold),
+                      color: ConstantsColor.customOrageColor,
+                      fontFamily: 'Poppins-regular',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ],
               ),
               Divider(
-                height: 40,
+                height: 40.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    height: 60,
-                    image: AssetImage('assets/logo/logo 3.PNG'),
+                    height: 50.h,
+                    image: const AssetImage('assets/logo/logo 3.PNG'),
                   ),
                 ],
               ),
               SizedBox(
-                height: 15,
+                height: 15.h,
               ),
               Text(
                 'Sizi onlaýn kitap dükanymyzda hoş gördük! ',
-                style: TextStyle(fontFamily: 'Poppins-regular'),
+                style: TextStyle(
+                  fontFamily: 'Poppins-regular',
+                  fontSize: 12.sp,
+                ),
               )
             ],
           ),

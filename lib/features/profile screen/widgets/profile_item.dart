@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileItem extends StatelessWidget {
   const ProfileItem({
@@ -18,7 +19,7 @@ class ProfileItem extends StatelessWidget {
         color: Colors.grey[100],
         elevation: 0.1,
         child: Container(
-          height: 55,
+          height: 50.h,
           padding: const EdgeInsets.only(left: 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -26,8 +27,7 @@ class ProfileItem extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                height: 25,
-                width: 25,
+                width: 20.w,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                   image: AssetImage(
@@ -35,16 +35,16 @@ class ProfileItem extends StatelessWidget {
                   ),
                 )),
               ),
-              const SizedBox(
-                width: 10,
+              SizedBox(
+                width: 10.w,
               ),
               Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 14.sp,
                   fontFamily: 'Poppins-regular',
                   //fontWeight: FontWeight.bold,
-                  color: Color(0xFF282846),
+                  color: const Color(0xFF282846),
                 ),
               ),
             ],

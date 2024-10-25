@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBanner extends StatefulWidget {
   const CustomBanner({
@@ -15,14 +16,14 @@ class _CustomBannerState extends State<CustomBanner> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 170.h,
       width: double.infinity,
       child: CarouselSlider.builder(
         itemCount: 4,
         itemBuilder: (context, int index, int index1) {
           return Container(
             margin: const EdgeInsets.only(left: 12, right: 12),
-            height: 160,
+            height: 170,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),

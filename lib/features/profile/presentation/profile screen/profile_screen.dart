@@ -1,6 +1,6 @@
-import 'package:book_store/features/profile%20screen/widgets/language_dialog.dart';
-import 'package:book_store/features/profile%20screen/widgets/log_out_dialog.dart';
-import 'package:book_store/features/profile%20screen/widgets/profile_item.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/widgets/language_dialog.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/widgets/log_out_dialog.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/widgets/profile_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

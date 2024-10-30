@@ -1,9 +1,9 @@
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/common/widgets/product.dart/product_item_vertical.dart';
-import 'package:book_store/features/book%20detail/widgets/custom_app_bar.dart';
-import 'package:book_store/features/book%20detail/widgets/kitap_ozellik.dart';
-import 'package:book_store/features/book%20detail/widgets/urun_degerlendirme.dart';
-import 'package:book_store/features/book%20detail/widgets/urun_soru_cevaplari.dart';
+import 'package:book_store/features/book_detail/presentation/widgets/custom_app_bar.dart';
+import 'package:book_store/features/book_detail/presentation/widgets/kitap_ozellik.dart';
+import 'package:book_store/features/book_detail/presentation/widgets/urun_degerlendirme.dart';
+import 'package:book_store/features/book_detail/presentation/widgets/urun_soru_cevaplari.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

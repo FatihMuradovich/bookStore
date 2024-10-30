@@ -1,4 +1,4 @@
-import 'package:book_store/features/book%20detail/book_detail.dart';
+import 'package:book_store/features/book_detail/presentation/book_detail.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

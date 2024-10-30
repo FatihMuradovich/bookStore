@@ -1,8 +1,8 @@
-import 'package:book_store/features/cart%20screen/cart_screen.dart';
-import 'package:book_store/features/category%20screen/category_screen.dart';
-import 'package:book_store/features/favorite%20screen/favorite_screen.dart';
+import 'package:book_store/features/cart/cart%20screen/cart_screen.dart';
+import 'package:book_store/features/category/presentation/pages/category%20screen/category_screen.dart';
+import 'package:book_store/features/favorites/presentation/favorite%20screen/favorite_screen.dart';
 import 'package:book_store/features/home%20screen/home_screen.dart';
-import 'package:book_store/features/profile%20screen/profile_screen.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/profile_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 

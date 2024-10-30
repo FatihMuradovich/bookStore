@@ -1,7 +1,7 @@
 import 'package:book_store/app/injection.dart';
 import 'package:book_store/common/splash_screen.dart';
 import 'package:book_store/common/widgets/custom_navbar.dart';
-import 'package:book_store/features/book%20detail/book_detail.dart';
+import 'package:book_store/features/book_detail/presentation/book_detail.dart';
 import 'package:book_store/features/category/data/datasources/datasource.dart';
 import 'package:book_store/features/category/presentation/cubit/cubit.dart';
 import 'package:book_store/features/home%20screen/notification_screen.dart';

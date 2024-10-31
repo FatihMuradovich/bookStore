@@ -23,7 +23,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_)=> CategoryCubit(remoteDataSource: sl<CategoryRemoteDataSource>()))
+        BlocProvider(create: (_)=> CategoryCubit(remoteDataSource: sl<CategoryRemoteDataSource>())..fetchCategories())
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),

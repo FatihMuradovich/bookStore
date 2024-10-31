@@ -14,7 +14,7 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Text('Categories'),
+        title: const Text('Categories'),
       ),
       body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
@@ -25,18 +25,24 @@ class CategoryScreen extends StatelessWidget {
               itemCount: state.categories.length,
               itemBuilder: (context, index) {
                 final category = state.categories[index];
-                return ListTile(
-                  title: Text(category.name),
-                  subtitle: Text(category.description ?? ''),
+                return Card(
+                  child: Text(category.name),
                 );
               },
             );
           } else if (state is CategoryError) {
             return Center(child: Text(state.message));
           }
-          return const Center(child: Text('Press the button to load categories.'));
+          return const Center(
+              child: Text('Press the button to load categories.'));
         },
       ),
     );
   }
 }
+
+
+// ListTile(
+//                   title: Text(category.name),
+//                   subtitle: Text(category.description ?? ''),
+//                 )

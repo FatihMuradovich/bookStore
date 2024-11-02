@@ -10,6 +10,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 // ignore: must_be_immutable
 class CustomNavBar extends StatefulWidget {
+  
   const CustomNavBar({
     super.key,
   });

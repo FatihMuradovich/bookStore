@@ -9,8 +9,8 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
-      elevation: 0.1,
+      color: Colors.grey[50],
+      elevation: 0.5,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -26,7 +26,7 @@ class CartItem extends StatelessWidget {
                 height: 90.w,
                 width: 90.w,
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade50,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                   image: const DecorationImage(
                     fit: BoxFit.cover,
@@ -98,7 +98,7 @@ class CartItem extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 3),
                           decoration: BoxDecoration(
-                            color: Colors.grey[100],
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Row(

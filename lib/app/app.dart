@@ -1,4 +1,5 @@
 import 'package:book_store/app/injection.dart';
+import 'package:book_store/app/router.dart';
 import 'package:book_store/common/splash_screen.dart';
 import 'package:book_store/common/widgets/custom_navbar.dart';
 import 'package:book_store/features/book_detail/presentation/book_detail.dart';
@@ -23,32 +24,38 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_)=> CategoryCubit(remoteDataSource: sl<CategoryRemoteDataSource>())..fetchCategories())
+        BlocProvider(
+            create: (_) =>
+                CategoryCubit(remoteDataSource: sl<CategoryRemoteDataSource>())
+                  ..fetchCategories())
       ],
       child: ScreenUtilInit(
-        designSize: const Size(375, 812),
+        designSize: const Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
         child: MaterialApp(
+          onGenerateRoute: RouteGenerator.generateRoute,
+          //initialRoute: splash,
           debugShowCheckedModeBanner: false,
           title: 'Book Library',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          routes: {
-            '/':(context)=>const SplashScreen(),
-            '/bookDetail': (context) => const BookDetail(),
-            '/notification': (context) => const NotificationScreen(),
-            '/myOrders': (context) => const MyOrdersScreen(),
-            '/adress': (context) => const AdressScreen(),
-            '/aboutUs': (context) => const AboutUsScreen(),
-            '/message': (context) => const MessageScreen(),
-            '/rule': (context) => const RulesScreen(),
-            '/customNavBar': (context) => const CustomNavBar(),
-            '/newAddAdress': (context) => const NewAddAdress(),
-            // '/adress': (context) => const AdressScreen(),
-          },
+         
+          // routes: {
+          //   '/': (context) => const SplashScreen(),
+          //   '/bookDetail': (context) => const BookDetail(),
+          //   '/notification': (context) => const NotificationScreen(),
+          //   '/myOrders': (context) => const MyOrdersScreen(),
+          //   '/adress': (context) => const AdressScreen(),
+          //   '/aboutUs': (context) => const AboutUsScreen(),
+          //   '/message': (context) => const MessageScreen(),
+          //   '/rule': (context) => const RulesScreen(),
+          //   '/customNavBar': (context) => const CustomNavBar(),
+          //   '/newAddAdress': (context) => const NewAddAdress(),
+          //   // '/adress': (context) => const AdressScreen(),
+          // },
         ),
       ),
     );

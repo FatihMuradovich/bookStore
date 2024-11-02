@@ -9,7 +9,7 @@ class ConstantsIcons {
   );
   static Icon rightChevron = Icon(
     FluentSystemIcons.ic_fluent_chevron_right_filled,
-    size: 20.h,
+    size: 18.h,
   );
 }
 

@@ -19,7 +19,7 @@ class ProfileItem extends StatelessWidget {
         color: Colors.grey[100],
         elevation: 0.1,
         child: Container(
-          height: 50.h,
+          height: 40.h,
           padding: const EdgeInsets.only(left: 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

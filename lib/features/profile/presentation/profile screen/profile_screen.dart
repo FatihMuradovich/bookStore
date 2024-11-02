@@ -51,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
                 icon: 'assets/icons/person_light.png',
               ),
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/myOrders'),
+                ontap: () => Navigator.pushNamed(context, '/myOrder'),
                 title: 'Sargytlarym',
                 icon: 'assets/icons/cart_light.png',
               ),
@@ -83,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Dil çalyşmak',
               ),
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/rule'),
+                ontap: () => Navigator.pushNamed(context, '/rules'),
                 icon: 'assets/icons/rule_light.png',
                 title: 'Eltip bermek we töleg',
               ),

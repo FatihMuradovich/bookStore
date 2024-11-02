@@ -3,7 +3,6 @@ import 'package:book_store/features/home%20screen/widgets/home_screen_list_view.
 import 'package:book_store/features/home%20screen/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'widgets/home_screen_category.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -64,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 230.h,
+                height: 220.h,
                 child: const HomeScreenListView(),
               ),
             ),
@@ -78,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 230.h,
+                height: 220.h,
                 child: const HomeScreenListView(),
               ),
             ),
@@ -92,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 230.h,
+                height: 220.h,
                 child: const HomeScreenListView(),
               ),
             ),

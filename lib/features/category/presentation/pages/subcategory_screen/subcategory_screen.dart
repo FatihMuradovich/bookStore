@@ -1,15 +1,13 @@
-// example widget (category_screen.dart)
-
 import 'package:book_store/common/constants.dart';
+import 'package:book_store/features/category/presentation/cubit/cubit.dart';
+import 'package:book_store/features/category/presentation/cubit/state.dart';
+import 'package:book_store/features/category/presentation/cubit/sub_category_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../cubit/cubit.dart';
-import '../../cubit/state.dart';
-
-class CategoryScreen extends StatelessWidget {
-  const CategoryScreen({super.key});
+class SubcategoryScreen extends StatelessWidget {
+  const SubcategoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,21 +15,32 @@ class CategoryScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('Kategoriýalar'),
+        automaticallyImplyLeading: false,
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: ConstantsIcons.leftChevron),
+        title: Text(
+          'Category name',
+          style: TextStyle(
+            fontFamily: 'Poppins-regular',
+            fontSize: 18.sp,
+          ),
+        ),
       ),
       body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
-          if (state is CategoryLoading) {
+          if (state is SubCategoryLoaded) {
             return const Center(child: CircularProgressIndicator());
-          } else if (state is CategoryLoaded) {
+          } else if (state is SubCategoryLoaded) {
             return ListView.builder(
+              itemCount: 10,
               padding: const EdgeInsets.all(5),
-              itemCount: state.categories.length,
               itemBuilder: (context, index) {
-                final category = state.categories[index];
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/subcategory');
+                    Navigator.pushNamed(context, '/bookscreen');
                   },
                   child: Card(
                     color: Colors.grey[100],
@@ -42,7 +51,7 @@ class CategoryScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            category.name,
+                            'Subcategory',
                             style: TextStyle(
                               fontFamily: 'Poppins-regular',
                               fontSize: 12.sp,
@@ -66,9 +75,3 @@ class CategoryScreen extends StatelessWidget {
     );
   }
 }
-
-
-// ListTile(
-//                   title: Text(category.name),
-//                   subtitle: Text(category.description ?? ''),
-//                 )

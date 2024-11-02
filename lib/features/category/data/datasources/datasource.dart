@@ -1,4 +1,5 @@
 import 'package:book_store/app/dio_settings.dart';
+import 'package:book_store/features/category/data/models/subcategories.dart';
 import '../models/category.dart';
 
 class CategoryRemoteDataSource {
@@ -17,5 +18,14 @@ class CategoryRemoteDataSource {
     }
   }
 
-  
+  Future<List<SubCategoryModel>> fetchSubcategories() async {
+    try {
+      final response = await dioSetting.dio.get('/subcategories/');
+      final List<dynamic> data = response.data;
+
+      return data.map((item) => SubCategoryModel.fromJson(item)).toList();
+    } catch (e) {
+      throw Exception('Failed to fetch categories');
+    }
+  }
 }

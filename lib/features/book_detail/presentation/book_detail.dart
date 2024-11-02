@@ -1,5 +1,5 @@
 import 'package:book_store/common/constants.dart';
-import 'package:book_store/common/widgets/product.dart/product_item_vertical.dart';
+import 'package:book_store/features/book_detail/presentation/widgets/auhtor_other_book.dart';
 import 'package:book_store/features/book_detail/presentation/widgets/custom_app_bar.dart';
 import 'package:book_store/features/book_detail/presentation/widgets/kitap_ozellik.dart';
 import 'package:book_store/features/book_detail/presentation/widgets/urun_degerlendirme.dart';
@@ -14,6 +14,78 @@ class BookDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      bottomNavigationBar: Container(
+        height: 60.h,
+        decoration: BoxDecoration(
+          border: Border.all(width: 0.1),
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0, -10),
+              blurRadius: 20,
+              color: const Color(0xFFDADADA).withOpacity(0.10),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: RichText(
+                  text: TextSpan(
+                    text: '250',
+                    style: TextStyle(
+                      fontFamily: 'Poppins-regular',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.sp,
+                      color: const Color(0xFFFF9E0D),
+                    ),
+                    children: [
+                      TextSpan(
+                        text: ' TMT',
+                        style: TextStyle(
+                          fontFamily: 'Poppin-regular',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.bold,
+                          color: ConstantsColor.customOrageColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0.5,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    backgroundColor: const Color(0xFFFF9E0D),
+                    padding: const EdgeInsets.all(10),
+                    fixedSize: Size(0, 30.h),
+                  ),
+                  onPressed: () async {
+                    // DbHelper.instance
+                    //     .insetBook(widget.book..quantity = 1)
+                    //     .then((value) => showTopToast());
+                  },
+                  child: Text(
+                    'Satyn al',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Poppins-regular',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14.sp),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
           const CustomAppBar(),
@@ -52,91 +124,7 @@ class BookDetail extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        flex: 5,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            RichText(
-                              text: TextSpan(
-                                text: '250',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins-regular',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18.sp,
-                                  color: const Color(0xFFFF9E0D),
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: ' TMT',
-                                    style: TextStyle(
-                                      fontFamily: 'Poppin-regular',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.bold,
-                                      color: ConstantsColor.customOrageColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            // Column(
-                            //   children: [
-                            //     const SizedBox(
-                            //       height: 5,
-                            //     ),
-                            //     (widget.book.sale == null ||
-                            //             widget.book.sale == 'null')
-                            //         ? const SizedBox.shrink()
-                            //         : Text(
-                            //             "${widget.book.sale} m.",
-                            //             style: const TextStyle(
-                            //               fontFamily: 'Poppins',
-                            //               fontSize: 14,
-                            //               fontWeight: FontWeight.bold,
-                            //               color:
-                            //                   Color.fromARGB(255, 255, 158, 13),
-                            //             ),
-                            //           ),
-                            //   ],
-                            // ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        flex: 5,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0.5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            backgroundColor: const Color(0xFFFF9E0D),
-                            padding: const EdgeInsets.all(10),
-                            fixedSize: Size(0, 30.h),
-                          ),
-                          onPressed: () async {
-                            // DbHelper.instance
-                            //     .insetBook(widget.book..quantity = 1)
-                            //     .then((value) => showTopToast());
-                          },
-                          child: Text(
-                            'Satyn al',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'Poppins-regular',
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14.sp),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+
                   SizedBox(
                     height: 20.h,
                   ),
@@ -239,20 +227,8 @@ class BookDetail extends StatelessWidget {
                     height: 10,
                   ),
                   SizedBox(
-                    height: 230.h,
-                    child: ListView.builder(
-                      //controller: _controller,
-                      shrinkWrap: true,
-                      itemExtent: 150.w,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return const Padding(
-                          padding: EdgeInsets.only(right: 5),
-                          child: ProductItemVertical(),
-                        );
-                      },
-                      itemCount: 10,
-                    ),
+                    height: 220.h,
+                    child: const AuthorOtherBook(),
                   ),
                 ],
               ),

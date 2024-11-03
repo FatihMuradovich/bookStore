@@ -10,14 +10,7 @@ class ProductItemVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const BookDetail(),
-          ),
-        );
-      },
+      onTap: () => Navigator.pushNamed(context, '/bookDetail'),
       child: Card(
         color: Colors.white,
         elevation: 0.1,

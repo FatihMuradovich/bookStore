@@ -7,10 +7,10 @@ import 'package:book_store/features/profile/presentation/profile%20screen/profil
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 // ignore: must_be_immutable
 class CustomNavBar extends StatefulWidget {
-  
   const CustomNavBar({
     super.key,
   });
@@ -20,7 +20,6 @@ class CustomNavBar extends StatefulWidget {
 }
 
 class _CustomNavBarState extends State<CustomNavBar> {
-  
   int navBarIndex = 0;
 
   List navBody = [
@@ -91,3 +90,63 @@ class _CustomNavBarState extends State<CustomNavBar> {
     );
   }
 }
+
+
+
+
+
+//  Scaffold(
+//       body: PersistentTabView(
+//         context,
+//         screens: navBody(),
+//         items: navBarItem(),
+//         navBarStyle: NavBarStyle.style9,
+//       ),
+//     );
+
+
+
+//  List<PersistentBottomNavBarItem> navBarItem() {
+//     return [
+//       PersistentBottomNavBarItem(
+//         activeColorPrimary: ConstantsColor.customBlueColor,
+//         inactiveColorPrimary: Colors.white,
+//         icon: const Icon(
+//           FluentSystemIcons.ic_fluent_home_filled,
+//         ),
+//         title: 'Baş sahypa',
+//       ),
+//       PersistentBottomNavBarItem(
+//         activeColorPrimary: ConstantsColor.customBlueColor,
+//         inactiveColorPrimary: Colors.white,
+//         icon: const Icon(
+//           FluentSystemIcons.ic_fluent_home_filled,
+//         ),
+//         title: 'Baş sahypa',
+//       ),
+//       PersistentBottomNavBarItem(
+//         activeColorPrimary: ConstantsColor.customBlueColor,
+//         inactiveColorPrimary: Colors.white,
+//         icon: const Icon(
+//           FluentSystemIcons.ic_fluent_home_filled,
+//         ),
+//         title: 'Baş sahypa',
+//       ),
+//       PersistentBottomNavBarItem(
+//         activeColorPrimary: ConstantsColor.customBlueColor,
+//         inactiveColorPrimary: Colors.white,
+//         icon: const Icon(
+//           FluentSystemIcons.ic_fluent_home_filled,
+//         ),
+//         title: 'Baş sahypa',
+//       ),
+//       PersistentBottomNavBarItem(
+//         activeColorPrimary: ConstantsColor.customBlueColor,
+//         inactiveColorPrimary: Colors.white,
+//         icon: const Icon(
+//           FluentSystemIcons.ic_fluent_home_filled,
+//         ),
+//         title: 'Baş sahypa',
+//       ),
+//     ];
+//   }

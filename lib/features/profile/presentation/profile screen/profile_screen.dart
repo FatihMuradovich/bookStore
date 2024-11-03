@@ -46,7 +46,9 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               ProfileItem(
-                ontap: () {},
+                ontap: () {
+                  Navigator.pushNamed(context, '/logIn');
+                },
                 title: 'Profil',
                 icon: 'assets/icons/person_light.png',
               ),

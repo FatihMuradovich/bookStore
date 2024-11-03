@@ -15,7 +15,7 @@ class AddAdressButton extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, '/newAddAdress');
+            Navigator.pushNamed(context, '/addAdress');
           },
           child: Container(
             decoration: BoxDecoration(

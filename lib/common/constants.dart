@@ -32,11 +32,11 @@ class ConstantsButtonStyle {
     ),
     backgroundColor: ConstantsColor.customOrageColor,
     padding: const EdgeInsets.all(10),
-    fixedSize: Size(250.w, 50.h),
+    fixedSize: Size(250.w, 40.h),
   );
 }
 
 class ConstantsColor {
   static Color customBlueColor = const Color(0xFF445872);
-  static Color customOrageColor = const Color(0xFFFF9E0D);
+  static Color customOrageColor = const Color(0xffff9200);
 }

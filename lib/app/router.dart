@@ -1,11 +1,15 @@
 import 'package:book_store/common/splash_screen.dart';
 import 'package:book_store/common/widgets/custom_navbar.dart';
+import 'package:book_store/features/auth/presentation/log_in/log_in.dart';
+import 'package:book_store/features/auth/presentation/register/register.dart';
 import 'package:book_store/features/book_detail/presentation/book_detail.dart';
 import 'package:book_store/features/category/presentation/pages/book_screen/book_screen.dart';
 import 'package:book_store/features/category/presentation/pages/subcategory_screen/subcategory_screen.dart';
 import 'package:book_store/features/favorites/presentation/favorite%20screen/favorite_screen.dart';
+import 'package:book_store/features/home%20screen/notification_screen.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/about%20us/about_us.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/adress%20/adress.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/adress%20/new_add_adress.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/message/message.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/my%20orders/my_orders.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/profile_screen.dart';
@@ -26,6 +30,10 @@ abstract class RouteGenerator {
   static const bookScreen = '/bookscreen';
   static const message = '/message';
   static const rules = '/rules';
+  static const notification = '/notification';
+  static const logIn = '/logIn';
+  static const addAdress = '/addAdress';
+  static const register = '/register';
 
   const RouteGenerator._();
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -66,6 +74,17 @@ abstract class RouteGenerator {
       case rules:
         return PageRouteBuilder(
             pageBuilder: (_, __, ___) => const RulesScreen());
+      case notification:
+        return PageRouteBuilder(
+            pageBuilder: (_, __, ___) => const NotificationScreen());
+      case logIn:
+        return PageRouteBuilder(
+            pageBuilder: (_, __, ___) => const LogInScreen());
+      case addAdress:
+        return PageRouteBuilder(
+            pageBuilder: (_, __, ___) => const NewAddAdress());
+      case register:
+        return PageRouteBuilder(pageBuilder: (_, __, ___) => const Register());
       default:
         throw const RouteException('Route not found');
     }

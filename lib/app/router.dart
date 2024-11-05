@@ -6,7 +6,6 @@ import 'package:book_store/features/book_detail/presentation/book_detail.dart';
 import 'package:book_store/features/category/presentation/pages/book_screen/book_screen.dart';
 import 'package:book_store/features/category/presentation/pages/subcategory_screen/subcategory_screen.dart';
 import 'package:book_store/features/favorites/presentation/favorite%20screen/favorite_screen.dart';
-import 'package:book_store/features/home%20screen/notification_screen.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/about%20us/about_us.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/adress%20/adress.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/adress%20/new_add_adress.dart';
@@ -15,6 +14,8 @@ import 'package:book_store/features/profile/presentation/profile%20screen/my%20o
 import 'package:book_store/features/profile/presentation/profile%20screen/profile_screen.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/rules/rules_screen.dart';
 import 'package:flutter/widgets.dart';
+
+import '../features/notifications/presentation/notification/notification_screen.dart';
 
 abstract class RouteGenerator {
   static const splash = '/';
@@ -34,6 +35,7 @@ abstract class RouteGenerator {
   static const logIn = '/logIn';
   static const addAdress = '/addAdress';
   static const register = '/register';
+  static const orderDetail = '/orderDetail';
 
   const RouteGenerator._();
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -85,6 +87,8 @@ abstract class RouteGenerator {
             pageBuilder: (_, __, ___) => const NewAddAdress());
       case register:
         return PageRouteBuilder(pageBuilder: (_, __, ___) => const Register());
+      // case orderDetail:
+      //   return PageRouteBuilder(pageBuilder: (_, __, ___) => const SargydyTassyklamak());
       default:
         throw const RouteException('Route not found');
     }

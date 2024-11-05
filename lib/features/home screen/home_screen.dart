@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 220.h,
+                height: 225.h,
                 child: const HomeScreenListView(),
               ),
             ),
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 220.h,
+                height: 225.h,
                 child: const HomeScreenListView(),
               ),
             ),
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),
               child: SizedBox(
-                height: 220.h,
+                height: 225.h,
                 child: const HomeScreenListView(),
               ),
             ),

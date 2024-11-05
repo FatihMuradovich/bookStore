@@ -55,11 +55,11 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Sargytlarym',
                 icon: 'assets/icons/cart_light.png',
               ),
-              ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/adress'),
-                icon: 'assets/icons/location_light.png',
-                title: 'Salgylarym',
-              ),
+              // ProfileItem(
+              //   ontap: () => Navigator.pushNamed(context, '/adress'),
+              //   icon: 'assets/icons/location_light.png',
+              //   title: 'Salgylarym',
+              // ),
               ProfileItem(
                 ontap: () => Navigator.pushNamed(context, '/aboutUs'),
                 icon: 'assets/icons/info_light.png',

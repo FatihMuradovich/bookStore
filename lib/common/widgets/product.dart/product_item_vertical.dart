@@ -21,17 +21,21 @@ class ProductItemVertical extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Container(
-                    height: 120.h,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade50,
-                      borderRadius: BorderRadius.circular(10),
-                      image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/books/1.png'),
-                      ),
-                    ),
+                  AspectRatio(
+                    aspectRatio: 1 / 1,
+                    child: Image(image: AssetImage('assets/books/1.jpg')),
                   ),
+                  // Container(
+                  //   height: 120.h,
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.grey.shade50,
+                  //     borderRadius: BorderRadius.circular(10),
+                  //     image: const DecorationImage(
+                  //       fit: BoxFit.cover,
+                  //       image: AssetImage('assets/books/1.png'),
+                  //     ),
+                  //   ),
+                  // ),
                   Positioned(
                     top: 4,
                     left: 4,

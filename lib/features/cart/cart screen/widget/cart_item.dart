@@ -26,11 +26,12 @@ class CartItem extends StatelessWidget {
                 height: 90.w,
                 width: 90.w,
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  image: const DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/books/1.png'),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const AspectRatio(
+                  aspectRatio: 1 / 1,
+                  child: Image(
+                    image: AssetImage('assets/books/1.jpg'),
                   ),
                 ),
               ),

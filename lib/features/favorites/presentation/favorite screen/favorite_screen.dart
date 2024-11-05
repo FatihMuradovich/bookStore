@@ -26,7 +26,7 @@ class FavoriteScreen extends StatelessWidget {
           itemCount: 5,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisExtent: 220.h,
+            mainAxisExtent: 230.h,
             crossAxisSpacing: 5,
             mainAxisSpacing: 5,
           ),

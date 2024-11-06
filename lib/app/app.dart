@@ -6,10 +6,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class App extends StatelessWidget {
-  const App({super.key});
+import 'localization/localization.dart';
 
-  // This widget is the root of your application.
+class App extends StatefulWidget {
+  const App({super.key});
+static _AppState? of(BuildContext context) {
+    return context.findAncestorStateOfType<_AppState>();
+  }
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  Locale _locale = const Locale('en');
+
+  void setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -25,8 +40,16 @@ class App extends StatelessWidget {
         splitScreenMode: true,
         child: MaterialApp(
           onGenerateRoute: RouteGenerator.generateRoute,
-          //initialRoute: splash,
-          debugShowCheckedModeBanner: false,
+          supportedLocales: AppLocalizations.supportedLocales,
+                  localizationsDelegates:
+                      AppLocalizations.localizationsDelegates,
+                  localeResolutionCallback: (locale, supportedLocales) {
+                    if (locale == null || !supportedLocales.contains(locale)) {
+                      return const Locale('en'); // Fallback to English if locale is unsupported
+                    }
+                    return locale;
+                  },
+                 locale: _locale, // Current locale (set by the user or system)          debugShowCheckedModeBanner: false,
           title: 'Book Library',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

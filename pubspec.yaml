@@ -53,6 +53,10 @@ dependencies:
   flutter_bloc: ^8.1.6
   equatable: ^2.0.5
   persistent_bottom_nav_bar: ^6.2.1
+  talker_bloc_logger: ^4.4.1
+  flutter_localizations:
+    sdk: flutter
+  intl: any
   # firebase_core: ^3.6.0
 
 dev_dependencies:
@@ -71,7 +75,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

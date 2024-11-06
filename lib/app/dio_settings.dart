@@ -4,34 +4,54 @@ import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
-const String TOKEN = 'TOKEN';
-const String REFRESH_TOKEN = 'RefreshTOKEN';
+const String ACCESS_TOKEN_KEY = 'TOKEN';
+const String REFRESH_TOKEN_KEY = 'RefreshTOKEN';
 
 class DioSetting {
   final Dio _dio;
   final FlutterSecureStorage _storage;
   final Talker _talker;
-  Dio get dio => _dio;
+  bool _isRefreshing = false;
+  final List<Function> _refreshSubscribers = [];
   FlutterSecureStorage get storage => _storage;
-  DioSetting(this._dio, this._storage,this._talker) {
+  Dio get dio => _dio;
+  Talker get talker => _talker;
+  DioSetting(this._dio, this._storage, this._talker) {
     _dio.interceptors.addAll([
       TalkerDioLogger(talker: _talker),
       QueuedInterceptorsWrapper(
         onRequest: (options, handler) async {
           final accessToken = await getAccessToken();
-          if (accessToken != null && JwtDecoder.isExpired(accessToken)) {
-            options.headers['Authorization'] = 'Bearer $accessToken';
+          if (accessToken != null) {
+            if (!JwtDecoder.isExpired(accessToken)) {
+              options.headers['Authorization'] = 'Bearer $accessToken';
+            } else if (!_isRefreshing) {
+              await _refreshAccessToken();
+              options.headers['Authorization'] =
+                  'Bearer ${await getAccessToken()}';
+            }
           }
           handler.next(options);
         },
         onError: (DioException error, handler) async {
           if (error.response?.statusCode == 401) {
-            // If we get a 401, it means the access token has expired.
-            final refreshed = await _refreshAccessToken();
-            if (refreshed) {
-              // Retry the request with a new token
-              final newRequest = await _retry(error.requestOptions);
-              return handler.resolve(newRequest);
+            if (!_isRefreshing) {
+              _isRefreshing = true;
+
+              final refreshed = await _refreshAccessToken();
+              _isRefreshing = false;
+
+              if (refreshed) {
+                _onTokenRefreshed(await getAccessToken() ?? '');
+                final newRequest = await _retry(error.requestOptions);
+                return handler.resolve(newRequest);
+              }
+            } else {
+              await _addRequestToQueue((String accessToken) {
+                error.requestOptions.headers['Authorization'] =
+                    'Bearer $accessToken';
+                return _retry(error.requestOptions);
+              });
             }
           }
           handler.next(error);
@@ -42,26 +62,26 @@ class DioSetting {
 
   // Fetch tokens from storage
   Future<String?> getAccessToken() async {
-    return await _storage.read(key: TOKEN);
+    return await _storage.read(key: ACCESS_TOKEN_KEY);
   }
 
   Future<String?> getRefreshToken() async {
-    return await _storage.read(key: REFRESH_TOKEN);
+    return await _storage.read(key: REFRESH_TOKEN_KEY);
   }
 
   // Store tokens securely
   Future<void> storeTokens(String accessToken, String refreshToken) async {
-    await _storage.write(key: TOKEN, value: accessToken);
-    await _storage.write(key: REFRESH_TOKEN, value: refreshToken);
+    await _storage.write(key: ACCESS_TOKEN_KEY, value: accessToken);
+    await _storage.write(key: REFRESH_TOKEN_KEY, value: refreshToken);
   }
 
   // Refresh access token
   Future<bool> _refreshAccessToken() async {
     final refreshToken = await getRefreshToken();
-    if (refreshToken != null) {
+    if (refreshToken != null && !JwtDecoder.isExpired(refreshToken)) {
       try {
         final response = await _dio.post(
-          'auth/refresh/',
+          'accounts/token/refresh/',
           data: {'refresh': refreshToken},
         );
         if (response.statusCode == 200) {
@@ -69,8 +89,10 @@ class DioSetting {
           return true;
         }
       } catch (e) {
-        print('Token refresh failed: $e');
+        _talker.error('Token refresh failed: $e');
       }
+    } else {
+      _talker.info('Refresh token has expired. Logging out.');
     }
     return false;
   }
@@ -80,7 +102,10 @@ class DioSetting {
     final accessToken = await getAccessToken();
     final options = Options(
       method: requestOptions.method,
-      headers: {'Authorization': 'Bearer $accessToken'},
+      headers: {
+        ...requestOptions.headers,
+        'Authorization': 'Bearer $accessToken',
+      },
     );
     return _dio.request(
       requestOptions.path,
@@ -88,5 +113,17 @@ class DioSetting {
       data: requestOptions.data,
       queryParameters: requestOptions.queryParameters,
     );
+  }
+
+  // Subscribers
+  Future<void> _addRequestToQueue(Function callback) async {
+    _refreshSubscribers.add(callback);
+  }
+
+  void _onTokenRefreshed(String accessToken) {
+    for (var callback in _refreshSubscribers) {
+      callback(accessToken);
+    }
+    _refreshSubscribers.clear();
   }
 }

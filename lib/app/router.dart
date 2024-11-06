@@ -86,7 +86,7 @@ abstract class RouteGenerator {
         return PageRouteBuilder(
             pageBuilder: (_, __, ___) => const NewAddAdress());
       case register:
-        return PageRouteBuilder(pageBuilder: (_, __, ___) => const Register());
+        return PageRouteBuilder(pageBuilder: (_, __, ___) =>  Register());
       // case orderDetail:
       //   return PageRouteBuilder(pageBuilder: (_, __, ___) => const SargydyTassyklamak());
       default:

@@ -21,7 +21,7 @@ registerTalker() {
 
 registerDio()  {
   sl.registerLazySingleton<Dio>(() => Dio(BaseOptions(
-        baseUrl: 'http://34.44.248.57/api',
+        baseUrl: 'http://127.0.0.1/api',
         connectTimeout: const Duration(milliseconds: 5000),
         receiveTimeout: const Duration(milliseconds: 3000),
       )));

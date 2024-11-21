@@ -1,5 +1,10 @@
+import 'package:book_store/common/utils.dart';
+import 'package:book_store/features/auth/presentation/log_in/log_in.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/about_us/about_us.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/message/message.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/my_orders.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/rules/rules_screen.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/widgets/language_dialog.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/widgets/log_out_dialog.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/widgets/profile_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,27 +51,28 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/logIn'),
-                title: 'Profil',
+                ontap: () => Navigator.of(context)
+                    .push(createFadeRoute(const LogInScreen())),
+                //ontap: () => Navigator.pushNamed(context, '/logIn'),
+                title: 'Hasap sazlamalarym',
                 icon: 'assets/icons/person_light.png',
               ),
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/myOrder'),
+                ontap: () => Navigator.of(context)
+                    .push(createFadeRoute(const MyOrdersScreen())),
+                //ontap: () => Navigator.pushNamed(context, '/myOrder'),
                 title: 'Sargytlarym',
                 icon: 'assets/icons/cart_light.png',
               ),
-              // ProfileItem(
-              //   ontap: () => Navigator.pushNamed(context, '/adress'),
-              //   icon: 'assets/icons/location_light.png',
-              //   title: 'Salgylarym',
-              // ),
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/aboutUs'),
+                ontap: () => Navigator.of(context)
+                    .push(createFadeRoute(const AboutUsScreen())),
                 icon: 'assets/icons/info_light.png',
                 title: 'Biz barada',
               ),
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/message'),
+                ontap: () => Navigator.of(context)
+                    .push(createFadeRoute(const MessageScreen())),
                 icon: 'assets/icons/comment_light.png',
                 title: 'Habarlaşmak',
               ),
@@ -83,33 +89,19 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Dil çalyşmak',
               ),
               ProfileItem(
-                ontap: () => Navigator.pushNamed(context, '/rules'),
+                ontap: () => Navigator.of(context)
+                    .push(createFadeRoute(const RulesScreen())),
                 icon: 'assets/icons/rule_light.png',
                 title: 'Eltip bermek we töleg',
               ),
               ProfileItem(
-                ontap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return const LogOutDialog();
-                    },
-                  );
-                },
+                ontap: () {},
                 icon: 'assets/icons/sign_light.png',
                 title: 'Ulgamdan çykmak',
               ),
               const SizedBox(
                 height: 10,
               ),
-              // Text(
-              //   'Wersiýa',
-              //   style: TextStyle(
-              //     fontSize: 14.sp,
-              //     fontFamily: 'Poppins-regular',
-              //   ),
-              //const TextStyle(fontFamily: 'Quicksand', fontSize: 16),
-              // )
             ],
           ),
         ),

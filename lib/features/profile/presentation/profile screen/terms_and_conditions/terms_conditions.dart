@@ -9,9 +9,12 @@ class TermsConditions extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('Şertler',style: TextStyle(
+        title: const Text(
+          'Şertler',
+          style: TextStyle(
             fontFamily: 'Poppins-regular',
-          ),),
+          ),
+        ),
       ),
     );
   }

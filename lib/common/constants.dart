@@ -11,6 +11,10 @@ class ConstantsIcons {
     FluentSystemIcons.ic_fluent_chevron_right_filled,
     size: 18.h,
   );
+  static Icon xIcon = Icon(
+    FluentSystemIcons.ic_fluent_dismiss_filled,
+    size: 20.h,
+  );
 }
 
 class ConstantsTextStyle {

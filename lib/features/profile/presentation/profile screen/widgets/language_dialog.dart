@@ -1,3 +1,4 @@
+import 'package:book_store/app/app.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,7 +45,9 @@ class LanguageDialog extends StatelessWidget {
               height: 10.h,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                App.of(context)?.setLocale(const Locale('ru'));
+              },
               style: ConstantsButtonStyle.elevatedButtonStyle,
               child: Text(
                 'Русский',

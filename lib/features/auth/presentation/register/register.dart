@@ -1,4 +1,5 @@
 import 'package:book_store/common/constants.dart';
+import 'package:book_store/features/auth/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,8 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../cubit/cubit.dart';
 
 class Register extends StatelessWidget {
- Register({super.key});
-final TextEditingController nameController = TextEditingController();
+  Register({super.key});
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController surnameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -79,7 +80,8 @@ final TextEditingController nameController = TextEditingController();
                               decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12),
-                                  borderSide: const BorderSide(color: Colors.grey),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12),
@@ -103,28 +105,20 @@ final TextEditingController nameController = TextEditingController();
                             SizedBox(
                               height: 30.h,
                             ),
-                            ElevatedButton(
+                            ContstantButton(
+                              title: 'Hasap açmak',
                               onPressed: () {
-                                context.read<RegisterCubit>().registerUser(phoneNumber: phoneController.text,email: nameController.text,password: passwordController.text,confirmPassword: passwordController.text,firstName: nameController.text,lastName: surnameController.text);
+                                context.read<RegisterCubit>().registerUser(
+                                      phoneNumber: phoneController.text,
+                                      email: nameController.text,
+                                      password: passwordController.text,
+                                      confirmPassword: passwordController.text,
+                                      firstName: nameController.text,
+                                      lastName: surnameController.text,
+                                    );
                               },
-                              style: ElevatedButton.styleFrom(
-                                elevation: 0.5,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                backgroundColor: ConstantsColor.customOrageColor,
-                                padding: const EdgeInsets.all(10),
-                                fixedSize: Size(double.maxFinite, 35.h),
-                              ),
-                              child: Text(
-                                'Hasap açmak',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins-black',
-                                  fontSize: 16.sp,
-                                  color: Colors.white,
-                                ),
-                              ),
                             ),
+
                             SizedBox(
                               height: 10.h,
                             ),
@@ -142,7 +136,8 @@ final TextEditingController nameController = TextEditingController();
                                   width: 5.w,
                                 ),
                                 GestureDetector(
-                                  onTap: () => Navigator.pushNamed(context, '/logIn'),
+                                  onTap: () =>
+                                      Navigator.pushNamed(context, '/logIn'),
                                   child: Text(
                                     'Içeri girmek.',
                                     style: TextStyle(

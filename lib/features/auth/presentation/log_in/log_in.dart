@@ -1,5 +1,7 @@
 import 'package:book_store/common/constants.dart';
-
+import 'package:book_store/common/utils.dart';
+import 'package:book_store/features/auth/presentation/register/register.dart';
+import 'package:book_store/features/auth/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,187 +35,173 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Container(
-            height: 300.h,
-            decoration: const BoxDecoration(
-              color: Color(0xffff9200),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: Align(
-              alignment: Alignment.center,
-              child: Card(
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Column(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,
+        leading: GestureDetector(onTap: () {
+          Navigator.pop(context);
+        },child: ConstantsIcons.xIcon),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(
+          left: 15,
+          right: 15,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            //crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Içeri girmek',
+                style: TextStyle(
+                    fontFamily: 'Poppins-regular',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black),
+              ),
+              SizedBox(
+                height: 3.h,
+              ),
+              Text(
+                'Içeri girmek içeri telefon belgiňizi \nýazyň',
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                style: TextStyle(
+                  fontFamily: 'Poppins-regular',
+                  fontSize: 12.sp,
+                ),
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Telefon belginiz',
+                    style: TextStyle(
+                      fontFamily: 'Poppins-regular',
+                      fontSize: 12.sp,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 2.h,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Içeri girmek',
+                          '+993',
                           style: TextStyle(
                               fontFamily: 'Poppins-regular',
                               fontWeight: FontWeight.bold,
-                              fontSize: 16.sp),
+                              fontSize: 12.sp),
                         ),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        
-                        Row(
-                          children: [
-                            Text(
-                              'Telefon belgiňiz',
-                              style: TextStyle(
-                                fontFamily: 'Poppins-regular',
-                                fontSize: 12.sp,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.phone,
-                          decoration: InputDecoration(
-                            prefixIcon: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    '+993',
-                                    style: TextStyle(
-                                        fontFamily: 'Poppins-regular',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12.sp),
-                                  ),
-                                  const VerticalDivider(
-                                    color: Colors.black,
-                                    thickness: 1,
-                                    width: 4,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: const BorderSide(color: Colors.grey),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(
-                                color: ConstantsColor.customBlueColor,
-                              ),
-                            ),
-                            hintText: '(xx)xx-xx-xx',
-                            hintStyle: TextStyle(
-                                fontFamily: 'Poppins-regular', fontSize: 12.sp),
-                            border: InputBorder.none,
-                          ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Haýyş, nomeri giriziň';
-                            }
-                            return null;
-                          },
-                        ),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Parolyňyz',
-                              style: TextStyle(
-                                fontFamily: 'Poppins-regular',
-                                fontSize: 12.sp,
-                              ),
-                            ),
-                            Text(
-                              'Paroly unutdyňyzmy?',
-                              style: TextStyle(
-                                  fontFamily: 'Poppins-regular',
-                                  fontSize: 12.sp,
-                                  color: ConstantsColor.customOrageColor,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        passwordTextFormField(),
-                        SizedBox(
-                          height: 30.h,
-                        ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0.5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            backgroundColor: ConstantsColor.customOrageColor,
-                            padding: const EdgeInsets.all(10),
-                            fixedSize: Size(double.maxFinite, 35.h),
-                          ),
-                          child: Text(
-                            'Içeri girmek',
-                            style: TextStyle(
-                              fontFamily: 'Poppins-black',
-                              fontSize: 16.sp,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Hasabyňyz ýokmy?',
-                              style: TextStyle(
-                                fontFamily: 'Poppins-regular',
-                                fontSize: 10.sp,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            GestureDetector(
-                              onTap: () =>
-                                  Navigator.pushNamed(context, '/register'),
-                              child: Text(
-                                'Hasap dörediň.',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins-regular',
-                                  color: ConstantsColor.customOrageColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 10.sp,
-                                ),
-                              ),
-                            ),
-                          ],
+                        const VerticalDivider(
+                          color: Colors.black,
+                          thickness: 1,
+                          width: 4,
                         ),
                       ],
                     ),
                   ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(
+                      color: ConstantsColor.customBlueColor,
+                    ),
+                  ),
+                  hintText: '(xx)xx-xx-xx',
+                  hintStyle:
+                      TextStyle(fontFamily: 'Poppins-regular', fontSize: 12.sp),
+                  border: InputBorder.none,
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Haýyş, nomeri giriziň';
+                  }
+                  return null;
+                },
               ),
-            ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Parolyňyz',
+                    style: TextStyle(
+                      fontFamily: 'Poppins-regular',
+                      fontSize: 12.sp,
+                    ),
+                  ),
+                  Text(
+                    'Paroly unutdyňyzmy?',
+                    style: TextStyle(
+                        fontFamily: 'Poppins-regular',
+                        fontSize: 11.sp,
+                        color: ConstantsColor.customOrageColor,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 2.h,
+              ),
+              passwordTextFormField(),
+              SizedBox(
+                height: 20.h,
+              ),
+              ContstantButton(
+                title: 'Iceri girmek',
+                onPressed: () {},
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Hasabyňyz ýokmy?',
+                    style: TextStyle(
+                      fontFamily: 'Poppins-regular',
+                      fontSize: 12.sp,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  GestureDetector(
+                    onTap: () =>
+                        Navigator.of(context).push(createFadeRoute(Register())),
+                    child: Text(
+                      'Hasap dörediň.',
+                      style: TextStyle(
+                        fontFamily: 'Poppins-regular',
+                        color: ConstantsColor.customOrageColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -247,3 +235,4 @@ class _LogInScreenState extends State<LogInScreen> {
     );
   }
 }
+

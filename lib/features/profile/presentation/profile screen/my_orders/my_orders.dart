@@ -1,7 +1,7 @@
 import 'package:book_store/common/constants.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/my%20orders/completed_order.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/my%20orders/continue_order.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/my%20orders/widget/tab_item.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/completed_order.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/continue_order.dart';
+import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/widget/tab_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

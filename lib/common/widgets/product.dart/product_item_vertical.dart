@@ -1,6 +1,9 @@
+import 'package:book_store/common/blocs/nav_bar_cubit/nav_bar_cubit.dart';
+import 'package:book_store/common/utils.dart';
 import 'package:book_store/features/book_detail/presentation/book_detail.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,7 +13,15 @@ class ProductItemVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/bookDetail'),
+      onTap: () {
+        context.read<NavBarCubit>().hideNavBar();
+        Navigator.of(context)
+            .push(createFadeRoute(const BookDetail()))
+            .then((_) {
+          // Geri dönüldüğünde navbar tekrar gösterilir
+          context.read<NavBarCubit>().showNavBar();
+        });
+      },
       child: Card(
         color: Colors.white,
         elevation: 0.1,
@@ -21,7 +32,7 @@ class ProductItemVertical extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  AspectRatio(
+                  const AspectRatio(
                     aspectRatio: 1 / 1,
                     child: Image(image: AssetImage('assets/books/1.jpg')),
                   ),

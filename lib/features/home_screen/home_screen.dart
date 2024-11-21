@@ -1,6 +1,6 @@
 import 'package:book_store/common/custom_banner.dart';
-import 'package:book_store/features/home%20screen/widgets/home_screen_list_view.dart';
-import 'package:book_store/features/home%20screen/widgets/search_text_field.dart';
+import 'package:book_store/features/home_screen/widgets/home_screen_list_view.dart';
+import 'package:book_store/features/home_screen/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/home_screen_category.dart';

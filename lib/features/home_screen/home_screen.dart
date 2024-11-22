@@ -1,6 +1,9 @@
 import 'package:book_store/common/custom_banner.dart';
+import 'package:book_store/common/utils.dart';
+import 'package:book_store/features/auth/presentation/otp/otp_form.dart';
 import 'package:book_store/features/home_screen/widgets/home_screen_list_view.dart';
 import 'package:book_store/features/home_screen/widgets/search_text_field.dart';
+import 'package:book_store/features/notifications/presentation/notification/notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'widgets/home_screen_category.dart';
@@ -29,7 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () => Navigator.pushNamed(context, '/notification'),
+            onPressed: () => Navigator.of(context)
+                    .push(createFadeRoute(const NotificationScreen())),
             icon: Icon(
               Icons.notifications,
               color: Colors.white,

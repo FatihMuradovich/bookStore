@@ -34,7 +34,10 @@ class LanguageDialog extends StatelessWidget {
               height: 10.h,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                
+                 App.of(context)?.setLocale(const Locale('tm'),);
+              },
               style: ConstantsButtonStyle.elevatedButtonStyle,
               child: Text(
                 'Türkmençe',
@@ -46,6 +49,7 @@ class LanguageDialog extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
+                
                 App.of(context)?.setLocale(const Locale('ru'));
               },
               style: ConstantsButtonStyle.elevatedButtonStyle,

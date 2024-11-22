@@ -60,14 +60,14 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
                     ),
-                    color: Color(0xFF96CCFF)),
+                    color:  Color.fromARGB(255, 167, 186, 212)),
                 child: TabBar(
                   controller: tabController,
                   indicatorSize: TabBarIndicatorSize.tab,
                   dividerColor: Colors.transparent,
-                  indicator: const BoxDecoration(
-                    color: Color(0xFF004D96),
-                    borderRadius: BorderRadius.all(
+                  indicator:  BoxDecoration(
+                    color: ConstantsColor.customBlueColor,
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(10),
                     ),
                   ),

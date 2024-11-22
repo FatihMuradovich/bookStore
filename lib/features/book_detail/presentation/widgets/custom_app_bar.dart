@@ -42,29 +42,24 @@ class CustomAppBar extends StatelessWidget {
       expandedHeight: 300,
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(
-          padding: const EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 0),
           child: Center(
-            child: SizedBox(
-              height: 220,
-              width: 150,
-              child: Align(
-                alignment: Alignment.center,
-                child: Container(
-                  //margin: const EdgeInsets.only(bottom: 15),
-                  height: 220,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    image: const DecorationImage(
-                        image: AssetImage('assets/books/1.png'),
-                        fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
+            child: AspectRatio(aspectRatio: 1/1,child: Image.asset('assets/books/1.jpg'),),
           ),
         ),
       ),
     );
   }
 }
+
+//  Container(
+//                   //margin: const EdgeInsets.only(bottom: 15),
+//                   height: 220,
+//                   width: 150,
+//                   decoration: BoxDecoration(
+//                     image: const DecorationImage(
+//                         image: AssetImage('assets/books/1.png'),
+//                         fit: BoxFit.cover),
+//                     borderRadius: BorderRadius.circular(10),
+//                   ),
+//                 ),

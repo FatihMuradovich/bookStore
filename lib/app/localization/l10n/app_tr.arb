@@ -1,9 +1,31 @@
 {
-    "title": "Book Shop"
-   
-
-
-
-
-
+    "title": "Book Shop",
+    "newBooks": "Täze gelen kitaplar",
+    "discountBook": "Arzanladyşdaky kitaplar",
+    "bookAuthorSearch": "Kitap, awtor",
+    "notification": "Bildirişler",
+    "description": "Kitap barada",
+    "auhtorsOtherBook": "Awtoryň başga kitaplary",
+    "productCode": "Haryt kody",
+    "publisher": "Neşirýat",
+    "bookLanguage": "Dili",
+    "bookCover": "Kitap daşy",
+    "publishYear": "Çap ýyly",
+    "page": "Sahypa sany",
+    "categories": "Kategoriýa",
+    "favorites": "Halanlarym",
+    "cart": "Sebet",
+    "amount": "Jemi",
+    "completeOrder": "Sargydy tamamla",
+    "profil": "Profil",
+    "myOrders": "Zakazlarym",
+    "aboutUs": "Biz barada",
+    "message": "Habarlaşmak",
+    "language": "Dil",
+    "selectLanguage": "Dili saýlaň",
+    "rules": "Eltip bermek we töleg",
+    "signOut": "Çykyş",
+    "areYouSure": "",
+    "yes": "Hawa",
+    "no": "Ýok"
 }

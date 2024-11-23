@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/profile_settings/widgets/log_out_dialog.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/profile_settings/widgets/profile_settings_item.dart';
@@ -21,7 +22,7 @@ class ProfileSettings extends StatelessWidget {
             },
             child: ConstantsIcons.leftChevron),
         title: Text(
-          'Hasap sazlamalarym',
+          context.l10n.settingsProfil,
           style: TextStyle(
             fontFamily: 'Poppins-regular',
             fontSize: 18.sp,

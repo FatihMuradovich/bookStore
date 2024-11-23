@@ -1,5 +1,6 @@
 // example widget (category_screen.dart)
 
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/category/presentation/pages/subcategory_screen/subcategory_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,10 @@ class CategoryScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('Kategoriýalar'),
+        title: Text(
+          context.l10n.categories,
+          style: TextStyle(fontFamily: 'Poppins-regular', fontSize: 18.sp),
+        ),
       ),
       body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
@@ -32,7 +36,10 @@ class CategoryScreen extends StatelessWidget {
                 final category = state.categories[index];
                 return GestureDetector(
                   onTap: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const SubcategoryScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SubcategoryScreen()));
                   },
                   child: Card(
                     color: Colors.grey[100],
@@ -45,7 +52,7 @@ class CategoryScreen extends StatelessWidget {
                           Text(
                             category.name,
                             style: TextStyle(
-                              fontFamily: 'Poppins-regular',
+                            fontFamily: 'Poppins-regular',
                               fontSize: 12.sp,
                             ),
                           ),

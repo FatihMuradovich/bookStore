@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/utils.dart';
 import 'package:book_store/features/auth/presentation/log_in/log_in.dart';
 import 'package:book_store/features/cart/cart%20screen/order_detail.dart';
@@ -39,7 +40,7 @@ class OrderBottom extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Umumy jemi:' ' (1)',
+                    '${context.l10n.amount}: (1)',
                     style: TextStyle(
                       fontFamily: 'Poppins-regular',
                       fontSize: 14.sp,

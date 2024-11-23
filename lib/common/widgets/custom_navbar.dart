@@ -1,3 +1,5 @@
+import 'package:book_store/app/app.dart';
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/blocs/nav_bar_cubit/nav_bar_cubit.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/cart/cart%20screen/cart_screen.dart';
@@ -45,7 +47,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
           icon: const Icon(
             FluentSystemIcons.ic_fluent_home_filled,
           ),
-          title: 'Baş sahypa',
+          title: context.l10n.homeScreen,
           textStyle: const TextStyle(
               fontFamily: 'Poppins-regular', fontWeight: FontWeight.bold)),
       PersistentBottomNavBarItem(
@@ -55,7 +57,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
           icon: const Icon(
             FluentSystemIcons.ic_fluent_glance_filled,
           ),
-          title: 'Kategoriýalar',
+          title: context.l10n.categories,
           textStyle: const TextStyle(
               fontFamily: 'Poppins-regular', fontWeight: FontWeight.bold)),
       PersistentBottomNavBarItem(
@@ -65,7 +67,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
           icon: const Icon(
             FluentSystemIcons.ic_fluent_heart_filled,
           ),
-          title: 'Halanlarym',
+          title: context.l10n.favorites,
           textStyle: const TextStyle(
               fontFamily: 'Poppins-regular', fontWeight: FontWeight.bold)),
       PersistentBottomNavBarItem(
@@ -75,7 +77,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
           icon: const Icon(
             Icons.shopping_cart,
           ),
-          title: 'Sebet',
+          title: context.l10n.cart,
           textStyle: const TextStyle(
               fontFamily: 'Poppins-regular', fontWeight: FontWeight.bold)),
       PersistentBottomNavBarItem(
@@ -85,7 +87,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
           icon: const Icon(
             FluentSystemIcons.ic_fluent_person_filled,
           ),
-          title: 'Profil',
+          title: context.l10n.profil,
           textStyle: const TextStyle(
               fontFamily: 'Poppins-regular', fontWeight: FontWeight.bold)),
     ];

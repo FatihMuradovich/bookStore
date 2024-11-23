@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/custom_banner.dart';
 import 'package:book_store/common/utils.dart';
 import 'package:book_store/features/auth/presentation/otp/otp_form.dart';
@@ -60,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             // Taze gelen kitaplar
             HomeScreenCategory(
-              text: 'Täze gelen kitaplar',
+              text: context.l10n.newBooks,
               nextPage: () {},
             ),
 
@@ -74,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // Arzanladys kitaplar
             HomeScreenCategory(
-              text: 'Arzanladyşdaky kitaplar',
+              text: context.l10n.discountBook,
               nextPage: () {},
             ),
 

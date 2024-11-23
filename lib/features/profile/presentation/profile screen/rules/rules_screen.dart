@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,7 @@ class RulesScreen extends StatelessWidget {
             },
             child: ConstantsIcons.leftChevron),
         title: Text(
-          'Eltip bermek we töleg',
+          context.l10n.rules,
           style: TextStyle(
             fontFamily: 'Poppins-regular',
             fontSize: 18.sp,

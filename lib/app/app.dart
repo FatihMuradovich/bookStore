@@ -63,7 +63,7 @@ class _AppState extends State<App> {
           localeResolutionCallback: (locale, supportedLocales) {
             if (locale == null || !supportedLocales.contains(locale)) {
               return const Locale(
-                  'en'); // Fallback to English if locale is unsupported
+                  'tr'); // Fallback to English if locale is unsupported
             }
             return locale;
           },

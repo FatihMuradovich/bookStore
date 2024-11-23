@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/cart/cart%20screen/widget/cart_item.dart';
 import 'package:book_store/features/cart/cart%20screen/widget/order_bottom.dart';
@@ -16,7 +17,7 @@ class CartScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title: Text(
-          'Sebet',
+          context.l10n.cart,
           style: TextStyle(
             fontFamily: 'Poppins-regular',
             fontSize: 18.sp,

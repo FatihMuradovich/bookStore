@@ -1,3 +1,5 @@
+import 'package:book_store/app/app.dart';
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/utils.dart';
 import 'package:book_store/features/auth/presentation/log_in/log_in.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/about_us/about_us.dart';
@@ -54,27 +56,27 @@ class ProfileScreen extends StatelessWidget {
                 ontap: () => Navigator.of(context)
                     .push(createFadeRoute(const LogInScreen())),
                 //ontap: () => Navigator.pushNamed(context, '/logIn'),
-                title: 'Hasap sazlamalarym',
+                title: context.l10n.settingsProfil,
                 icon: 'assets/icons/person_light.png',
               ),
               ProfileItem(
                 ontap: () => Navigator.of(context)
                     .push(createFadeRoute(const MyOrdersScreen())),
                 //ontap: () => Navigator.pushNamed(context, '/myOrder'),
-                title: 'Sargytlarym',
+                title: context.l10n.myOrders,
                 icon: 'assets/icons/cart_light.png',
               ),
               ProfileItem(
                 ontap: () => Navigator.of(context)
                     .push(createFadeRoute(const AboutUsScreen())),
                 icon: 'assets/icons/info_light.png',
-                title: 'Biz barada',
+                title: context.l10n.aboutUs,
               ),
               ProfileItem(
                 ontap: () => Navigator.of(context)
                     .push(createFadeRoute(const MessageScreen())),
                 icon: 'assets/icons/comment_light.png',
-                title: 'Habarlaşmak',
+                title: context.l10n.message,
               ),
               ProfileItem(
                 ontap: () {
@@ -86,13 +88,13 @@ class ProfileScreen extends StatelessWidget {
                   );
                 },
                 icon: 'assets/icons/globe_light.png',
-                title: 'Dil çalyşmak',
+                title: context.l10n.language,
               ),
               ProfileItem(
                 ontap: () => Navigator.of(context)
                     .push(createFadeRoute(const RulesScreen())),
                 icon: 'assets/icons/rule_light.png',
-                title: 'Eltip bermek we töleg',
+                title: context.l10n.rules,
               ),
               // ProfileItem(
               //   ontap: () {},

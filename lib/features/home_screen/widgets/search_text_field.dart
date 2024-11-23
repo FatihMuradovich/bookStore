@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -19,20 +20,20 @@ class SearchTextField extends StatelessWidget {
         horizontal: 15,
         vertical: 4,
       ),
-      child: const Row(
+      child:  Row(
         children: [
-          Icon(
+          const Icon(
             FluentSystemIcons.ic_fluent_search_filled,
             color: Colors.grey,
           ),
-          SizedBox(
+          const SizedBox(
             width: 6,
           ),
           Flexible(
             flex: 4,
             child: TextField(
               decoration: InputDecoration(
-                  hintText: 'Kitap, awtor...', border: InputBorder.none),
+                  hintText: context.l10n.bookAuthorSearch, border: InputBorder.none),
             ),
           ),
         ],

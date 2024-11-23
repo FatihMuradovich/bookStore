@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/book_detail/presentation/widgets/auhtor_other_book.dart';
 import 'package:book_store/features/book_detail/presentation/widgets/custom_app_bar.dart';
@@ -130,7 +131,7 @@ class BookDetail extends StatelessWidget {
                   ),
 
                   Text(
-                    'Kitap barada',
+                    context.l10n.description,
                     style: TextStyle(
                         fontSize: 16.sp,
                         fontFamily: 'Poppins-regular',
@@ -154,56 +155,56 @@ class BookDetail extends StatelessWidget {
                   const Divider(
                     height: 30,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Ürün Soru ve Cevaplari',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontFamily: 'Poppins-regular',
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: GestureDetector(
-                            onTap: () {}, child: ConstantsIcons.rightChevron),
-                      ),
-                    ],
-                  ),
-                  const UrunSoruCevaplari(),
-                  Divider(
-                    height: 30.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Ürün değerlendirme',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontFamily: 'Poppins-regular',
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: GestureDetector(
-                            onTap: () {}, child: ConstantsIcons.rightChevron),
-                      ),
-                    ],
-                  ),
-                  const UrunDegerlendirme(),
-                  SizedBox(
-                    height: 20.h,
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text(
+                  //       'Ürün Soru ve Cevaplari',
+                  //       style: TextStyle(
+                  //         fontSize: 16.sp,
+                  //         fontFamily: 'Poppins-regular',
+                  //         fontWeight: FontWeight.w800,
+                  //       ),
+                  //     ),
+                  //     GestureDetector(
+                  //       onTap: () {},
+                  //       child: GestureDetector(
+                  //           onTap: () {}, child: ConstantsIcons.rightChevron),
+                  //     ),
+                  //   ],
+                  // ),
+                  // const UrunSoruCevaplari(),
+                  // Divider(
+                  //   height: 30.h,
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text(
+                  //       'Ürün değerlendirme',
+                  //       style: TextStyle(
+                  //         fontSize: 16.sp,
+                  //         fontFamily: 'Poppins-regular',
+                  //         fontWeight: FontWeight.w800,
+                  //       ),
+                  //     ),
+                  //     GestureDetector(
+                  //       onTap: () {},
+                  //       child: GestureDetector(
+                  //           onTap: () {}, child: ConstantsIcons.rightChevron),
+                  //     ),
+                  //   ],
+                  // ),
+                  // const UrunDegerlendirme(),
+                  // SizedBox(
+                  //   height: 20.h,
+                  // ),
                   // Author's other books
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Author\'s other books',
+                        context.l10n.auhtorsOtherBook,
                         style: TextStyle(
                             fontSize: 16.sp,
                             fontFamily: 'Poppins-regular',

@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/common/utils.dart';
 import 'package:book_store/features/cart/cart%20screen/order_detail.dart';
@@ -26,7 +27,7 @@ class OrderButton extends StatelessWidget {
             horizontal: 25,
           ),
           child: Text(
-            'Sargydy tamamla',
+            context.l10n.completeOrder,
             style: TextStyle(
                 fontFamily: 'Poppins-regular',
                 fontWeight: FontWeight.bold,

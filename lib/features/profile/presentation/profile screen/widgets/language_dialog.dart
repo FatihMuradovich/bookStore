@@ -1,4 +1,5 @@
 import 'package:book_store/app/app.dart';
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,17 +27,19 @@ class LanguageDialog extends StatelessWidget {
             SizedBox(
               height: 5.h,
             ),
-            const Text(
-              'Dili saýlaň',
-              style: TextStyle(fontFamily: 'Poppins-regular', fontSize: 16),
+             Text(
+              context.l10n.selectLanguage,
+              style: const TextStyle(fontFamily: 'Poppins-regular', fontSize: 16),
             ),
             SizedBox(
               height: 10.h,
             ),
             ElevatedButton(
               onPressed: () {
-                
-                 App.of(context)?.setLocale(const Locale('tm'),);
+                App.of(context)?.setLocale(
+                  const Locale('tm'),
+                );
+                Navigator.pop(context);
               },
               style: ConstantsButtonStyle.elevatedButtonStyle,
               child: Text(
@@ -49,8 +52,8 @@ class LanguageDialog extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                
                 App.of(context)?.setLocale(const Locale('ru'));
+                  Navigator.pop(context);
               },
               style: ConstantsButtonStyle.elevatedButtonStyle,
               child: Text(

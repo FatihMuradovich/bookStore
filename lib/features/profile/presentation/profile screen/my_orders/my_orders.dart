@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/completed_order.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/continue_order.dart';
@@ -41,7 +42,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>
             },
             child: ConstantsIcons.leftChevron),
         title: Text(
-          'Sargytlarym',
+          context.l10n.myOrders,
           style: TextStyle(
             fontFamily: 'Poppins-regular',
             fontSize: 18.sp,

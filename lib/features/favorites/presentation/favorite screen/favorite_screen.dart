@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/widgets/product.dart/product_item_vertical.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +14,7 @@ class FavoriteScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Text(
-          'Halanlarym',
+          context.l10n.favorites,
           style: TextStyle(
             fontFamily: 'Poppins-regular',
             fontSize: 18.sp,

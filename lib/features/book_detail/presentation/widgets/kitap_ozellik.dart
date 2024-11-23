@@ -1,3 +1,4 @@
+import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class KitapOzellik extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Haryt kody',
+                  context.l10n.productCode,
                   style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
@@ -40,7 +41,7 @@ class KitapOzellik extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Çaphana',
+                  context.l10n.publisher,
                   style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
@@ -56,11 +57,11 @@ class KitapOzellik extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Kitabyň dili',
+                  context.l10n.language,
                   style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
-                  'Türk dilinde',
+                  'Türk',
                   style: ConstantsTextStyle.kitapOzellik,
                 ),
               ],
@@ -72,7 +73,7 @@ class KitapOzellik extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Book cover',
+                  context.l10n.bookCover,
                   style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
@@ -88,7 +89,7 @@ class KitapOzellik extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Çap ýyly',
+                  context.l10n.publishYear,
                   style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(
@@ -104,7 +105,7 @@ class KitapOzellik extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Sahypa',
+                  context.l10n.page,
                   style: ConstantsTextStyle.kitapOzellik,
                 ),
                 Text(

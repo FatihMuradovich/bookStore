@@ -81,12 +81,15 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>
               ),
             )),
       ),
-      body: TabBarView(
-        controller: tabController,
-        children: const [
-          OrderToContinue(),
-          CompletedOrder(),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TabBarView(
+          controller: tabController,
+          children: const [
+            OrderToContinue(),
+            CompletedOrder(),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:book_store/common/utils.dart';
-import 'package:book_store/features/auth/presentation/otp/otp_form.dart';
+import 'package:book_store/features/auth/presentation/log_in/log_in.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/about_us/about_us.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/message/message.dart';
 import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/my_orders.dart';
@@ -52,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
             children: [
               ProfileItem(
                 ontap: () => Navigator.of(context)
-                    .push(createFadeRoute(const OtpForm())),
+                    .push(createFadeRoute(const LogInScreen())),
                 //ontap: () => Navigator.pushNamed(context, '/logIn'),
                 title: 'Hasap sazlamalarym',
                 icon: 'assets/icons/person_light.png',

@@ -1,10 +1,13 @@
 import 'package:book_store/app/dio_settings.dart';
+import 'package:book_store/features/auth/cubit/loginRegistration/cubit.dart';
 import 'package:book_store/features/category/data/datasources/datasource.dart';
 import 'package:book_store/features/category/presentation/cubit/cubit.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:talker_flutter/talker_flutter.dart';
+
+import '../features/auth/data/auth.dart';
 
 final GetIt sl = GetIt.instance;
 Future<void> init() async {
@@ -21,7 +24,7 @@ registerTalker() {
 
 registerDio()  {
   sl.registerLazySingleton<Dio>(() => Dio(BaseOptions(
-        baseUrl: 'http://127.0.0.1/api',
+        baseUrl: 'http://34.44.248.57/api',
         connectTimeout: const Duration(milliseconds: 5000),
         receiveTimeout: const Duration(milliseconds: 3000),
       )));
@@ -29,6 +32,7 @@ registerDio()  {
   sl.registerLazySingleton(() => Talker());
   sl.registerLazySingleton(
       () => DioSetting(sl<Dio>(), sl<FlutterSecureStorage>(), sl<Talker>()));
+      sl.registerLazySingleton<AuthSettings>(()=>AuthSettings(sl<DioSetting>()));
 }
 
 registerDataSources()  {
@@ -39,4 +43,6 @@ registerDataSources()  {
 registerBloc()  {
   sl.registerFactory(
       () => CategoryCubit(remoteDataSource: sl<CategoryRemoteDataSource>()));
+      sl.registerFactory<RegisterCubit>(
+      () => RegisterCubit(sl<AuthSettings>()));
 }

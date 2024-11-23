@@ -1,9 +1,36 @@
 import 'package:book_store/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
+   // Sosyal medya URL'leri
+  final String instagramUrl = 'https://www.instagram.com/kitapchesmesi/';
+  final String tiktokUrl = 'https://www.tiktok.com/@kitapchesmesi';
+  
+  // Telefon numarası
+  final String phoneNumber = '+99364778240';
+
+  // URL'yi açma
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'URL açılamıyor: $url';
+    }
+  }
+
+  // Telefon numarasını arama
+  Future<void> _callPhoneNumber(String number) async {
+    final Uri uri = Uri(scheme: 'tel', path: number);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Telefon numarası açılamıyor: $number';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +68,16 @@ class AboutUsScreen extends StatelessWidget {
                       fontSize: 12.sp,
                     ),
                   ),
-                  Text(
-                    '+993 64 77-82-40',
-                    style: TextStyle(
-                      color: ConstantsColor.customOrageColor,
-                      fontFamily: 'Poppins-regular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.sp,
+                  GestureDetector(
+                    onTap: () => _callPhoneNumber(phoneNumber),
+                    child: Text(
+                      '+993 64 77-82-40',
+                      style: TextStyle(
+                        color: ConstantsColor.customOrageColor,
+                        fontFamily: 'Poppins-regular',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
+                      ),
                     ),
                   ),
                 ],
@@ -89,13 +119,16 @@ class AboutUsScreen extends StatelessWidget {
                       fontSize: 12.sp,
                     ),
                   ),
-                  Text(
-                    '@kitapchesmesi',
-                    style: TextStyle(
-                      color: ConstantsColor.customOrageColor,
-                      fontFamily: 'Poppins-regular',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.sp,
+                  GestureDetector(
+                    onTap: () => _launchUrl(instagramUrl),
+                    child: Text(
+                      '@kitapchesmesi',
+                      style: TextStyle(
+                        color: ConstantsColor.customOrageColor,
+                        fontFamily: 'Poppins-regular',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
+                      ),
                     ),
                   ),
                 ],

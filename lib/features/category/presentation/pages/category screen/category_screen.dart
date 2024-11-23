@@ -1,6 +1,7 @@
 // example widget (category_screen.dart)
 
 import 'package:book_store/common/constants.dart';
+import 'package:book_store/features/category/presentation/pages/subcategory_screen/subcategory_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +32,7 @@ class CategoryScreen extends StatelessWidget {
                 final category = state.categories[index];
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/subcategory');
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const SubcategoryScreen()));
                   },
                   child: Card(
                     color: Colors.grey[100],

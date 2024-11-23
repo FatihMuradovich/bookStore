@@ -1,8 +1,13 @@
+import 'package:book_store/app/dio_settings.dart';
 import 'package:book_store/app/injection.dart';
 import 'package:book_store/app/router.dart';
 import 'package:book_store/common/blocs/nav_bar_cubit/nav_bar_cubit.dart';
+import 'package:book_store/features/auth/cubit/loginRegistration/cubit.dart';
+import 'package:book_store/features/auth/cubit/validation/cubit/form_cubit.dart';
+import 'package:book_store/features/auth/data/auth.dart';
 import 'package:book_store/features/category/data/datasources/datasource.dart';
 import 'package:book_store/features/category/presentation/cubit/cubit.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,8 +42,14 @@ class _AppState extends State<App> {
                 CategoryCubit(remoteDataSource: sl<CategoryRemoteDataSource>())
                   ..fetchCategories()),
         BlocProvider(
-            create: (_) =>
-                NavBarCubit(),),          
+          create: (_) => NavBarCubit(),
+        ),
+        BlocProvider(
+          create: (_) => RegisterCubit(sl<AuthSettings>()),
+        ),
+        BlocProvider(
+          create: (_) => FormCubit(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),

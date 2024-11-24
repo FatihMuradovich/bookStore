@@ -1,12 +1,9 @@
-// example widget (category_screen.dart)
-
 import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/category/presentation/pages/subcategory_screen/subcategory_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../cubit/cubit.dart';
 import '../../cubit/state.dart';
 
@@ -19,6 +16,7 @@ class CategoryScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+       
         title: Text(
           context.l10n.categories,
           style: TextStyle(fontFamily: 'Poppins-regular', fontSize: 18.sp),
@@ -37,9 +35,11 @@ class CategoryScreen extends StatelessWidget {
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SubcategoryScreen()));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SubcategoryScreen(),
+                      ),
+                    );
                   },
                   child: Card(
                     color: Colors.grey[100],
@@ -52,7 +52,7 @@ class CategoryScreen extends StatelessWidget {
                           Text(
                             category.name,
                             style: TextStyle(
-                            fontFamily: 'Poppins-regular',
+                              fontFamily: 'Poppins-regular',
                               fontSize: 12.sp,
                             ),
                           ),
@@ -68,15 +68,10 @@ class CategoryScreen extends StatelessWidget {
             return Center(child: Text(state.message));
           }
           return const Center(
-              child: Text('Press the button to load categories.'));
+            child: Text('Press the button to load categories.'),
+          );
         },
       ),
     );
   }
 }
-
-
-// ListTile(
-//                   title: Text(category.name),
-//                   subtitle: Text(category.description ?? ''),
-//                 )

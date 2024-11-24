@@ -15,6 +15,10 @@ class ConstantsIcons {
     FluentSystemIcons.ic_fluent_dismiss_filled,
     size: 20.h,
   );
+   static Icon favorite = Icon(
+    FluentSystemIcons.ic_fluent_heart_regular,
+    size: 20.h,
+  );
 }
 
 class ConstantsTextStyle {

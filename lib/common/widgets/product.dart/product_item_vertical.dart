@@ -1,7 +1,6 @@
 import 'package:book_store/common/blocs/nav_bar_cubit/nav_bar_cubit.dart';
 import 'package:book_store/common/utils.dart';
 import 'package:book_store/features/book_detail/presentation/book_detail.dart';
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -112,32 +111,18 @@ class ProductItemVertical extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              Row(
-                children: [
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_filled,
-                    size: 16.w,
-                    color: Colors.amber,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_filled,
-                    size: 16.w,
-                    color: Colors.amber,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_regular,
-                    size: 16.w,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_regular,
-                    size: 16.w,
-                  ),
-                  Icon(
-                    FluentSystemIcons.ic_fluent_star_regular,
-                    size: 16.w,
-                  ),
-                ],
-              ),
+              // RatingBar(
+              //   minRating: 0,
+              //   maxRating: 5,
+              //   initialRating: 3,
+              //   allowHalfRating: true,
+              //   ratingWidget: RatingWidget(
+              //     full: Icon(FluentSystemIcons.ic_fluent_heart_filled),
+              //     half: Icon(FluentSystemIcons.heart),
+              //     empty: Icon(FluentSystemIcons.ic_fluent_heart_regular),
+              //   ),
+              //   onRatingUpdate: (dw) {},
+              // ),
               SizedBox(
                 height: 5.h,
               ),

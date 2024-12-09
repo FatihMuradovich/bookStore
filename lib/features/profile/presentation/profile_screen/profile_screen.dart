@@ -1,13 +1,12 @@
-import 'package:book_store/app/app.dart';
 import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/utils.dart';
 import 'package:book_store/features/auth/presentation/log_in/log_in.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/about_us/about_us.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/message/message.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/my_orders/my_orders.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/rules/rules_screen.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/widgets/language_dialog.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/widgets/profile_item.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/about_us/about_us.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/message/message.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/my_orders/my_orders.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/rules/rules_screen.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/widgets/language_dialog.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/widgets/profile_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,6 +19,8 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.white,
         automaticallyImplyLeading: false,
         leadingWidth: 300,
         leading: Padding(

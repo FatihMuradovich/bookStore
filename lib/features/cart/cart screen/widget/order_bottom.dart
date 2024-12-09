@@ -1,7 +1,4 @@
 import 'package:book_store/app/localization/localization.dart';
-import 'package:book_store/common/utils.dart';
-import 'package:book_store/features/auth/presentation/log_in/log_in.dart';
-import 'package:book_store/features/cart/cart%20screen/order_detail.dart';
 import 'package:book_store/features/cart/cart%20screen/widget/order_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

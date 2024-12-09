@@ -16,6 +16,9 @@ class BookDetail extends StatelessWidget {
       bottomNavigationBar: const BookDetailCustomBottom(),
       appBar: AppBar(
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        elevation: 1,
+        shadowColor: Colors.white,
        //surfaceTintColor: ConstantsColor.customBlueColor,
         automaticallyImplyLeading: false,
         leading: GestureDetector(

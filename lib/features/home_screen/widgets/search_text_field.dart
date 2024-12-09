@@ -41,8 +41,9 @@ class SearchTextField extends StatelessWidget {
                 );
               },
               decoration: InputDecoration(
-                  hintText: context.l10n.bookAuthorSearch,
-                  border: InputBorder.none),
+                hintText: context.l10n.bookAuthorSearch,
+                border: InputBorder.none,
+              ),
             ),
           ),
         ],
@@ -58,7 +59,8 @@ class CustomSearch extends SearchDelegate {
     'Ceper eser',
     'Roman',
   ];
-
+  @override
+  String get searchFieldLabel => 'Kitap';
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [

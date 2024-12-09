@@ -1,7 +1,7 @@
 import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/profile_settings/widgets/log_out_dialog.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/profile_settings/widgets/profile_settings_item.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/profile_settings/widgets/log_out_dialog.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/profile_settings/widgets/profile_settings_item.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

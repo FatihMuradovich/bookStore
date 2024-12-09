@@ -1,6 +1,6 @@
 import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/constants.dart';
-import 'package:book_store/features/category/presentation/pages/subcategory_screen/subcategory_screen.dart';
+import 'package:book_store/features/category/presentation/pages/book_screen/book_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +16,8 @@ class CategoryScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-       
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.white,
         title: Text(
           context.l10n.categories,
           style: TextStyle(fontFamily: 'Poppins-regular', fontSize: 18.sp),
@@ -37,7 +38,7 @@ class CategoryScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const SubcategoryScreen(),
+                        builder: (context) => const BookScreen(),
                       ),
                     );
                   },

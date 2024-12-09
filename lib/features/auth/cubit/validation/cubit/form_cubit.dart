@@ -1,6 +1,6 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:book_store/features/auth/cubit/validation/cubit/form_state.dart';
-import 'package:equatable/equatable.dart';
 
 class FormCubit extends Cubit<FormCustomState> {
   FormCubit() : super(const FormCustomState());

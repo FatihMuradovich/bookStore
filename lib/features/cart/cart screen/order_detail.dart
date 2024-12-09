@@ -18,7 +18,7 @@ class OrderDetail extends StatelessWidget {
           child: ConstantsIcons.leftChevron,
         ),
         title: Text(
-          'Sargydy tamamlamak',
+          'Sargydy tamamla',
           style: TextStyle(
             fontFamily: 'Poppins-regular',
             fontSize: 18.sp,
@@ -161,7 +161,7 @@ class OrderDetail extends StatelessWidget {
               height: 20.h,
             ),
             ContstantButton(
-              title: 'Sargydy tassykla',
+              title: 'Sargydy tamamla',
               onPressed: () {},
             ),
           ],

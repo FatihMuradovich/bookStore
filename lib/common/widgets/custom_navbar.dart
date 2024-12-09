@@ -1,4 +1,3 @@
-import 'package:book_store/app/app.dart';
 import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/blocs/nav_bar_cubit/nav_bar_cubit.dart';
 import 'package:book_store/common/constants.dart';
@@ -6,7 +5,7 @@ import 'package:book_store/features/cart/cart%20screen/cart_screen.dart';
 import 'package:book_store/features/category/presentation/pages/category%20screen/category_screen.dart';
 import 'package:book_store/features/favorites/presentation/favorite%20screen/favorite_screen.dart';
 import 'package:book_store/features/home_screen/home_screen.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/profile_screen.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/profile_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

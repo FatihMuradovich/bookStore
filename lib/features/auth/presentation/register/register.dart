@@ -2,7 +2,7 @@ import 'package:book_store/common/constants.dart';
 import 'package:book_store/features/auth/cubit/validation/cubit/form_cubit.dart';
 import 'package:book_store/features/auth/cubit/validation/cubit/form_state.dart';
 import 'package:book_store/features/auth/presentation/widgets/button.dart';
-import 'package:book_store/features/profile/presentation/profile%20screen/profile_screen.dart';
+import 'package:book_store/features/profile/presentation/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

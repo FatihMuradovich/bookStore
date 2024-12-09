@@ -15,6 +15,8 @@ class CartScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.white,
         automaticallyImplyLeading: false,
         title: Text(
           context.l10n.cart,

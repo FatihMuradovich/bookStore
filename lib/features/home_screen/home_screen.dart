@@ -1,7 +1,6 @@
 import 'package:book_store/app/localization/localization.dart';
 import 'package:book_store/common/custom_banner.dart';
 import 'package:book_store/common/utils.dart';
-import 'package:book_store/features/auth/presentation/otp/otp_form.dart';
 import 'package:book_store/features/home_screen/widgets/home_screen_list_view.dart';
 import 'package:book_store/features/home_screen/widgets/search_text_field.dart';
 import 'package:book_store/features/notifications/presentation/notification/notification_screen.dart';
@@ -26,6 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFFff9900),
+        surfaceTintColor: const Color(0xFFff9900),
+        shadowColor: Colors.white,
         centerTitle: false,
         title: Image.asset(
           width: 90.w,
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             onPressed: () => Navigator.of(context)
-                    .push(createFadeRoute(const NotificationScreen())),
+                .push(createFadeRoute(const NotificationScreen())),
             icon: Icon(
               Icons.notifications,
               color: Colors.white,

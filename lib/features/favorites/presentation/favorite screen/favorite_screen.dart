@@ -13,6 +13,8 @@ class FavoriteScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.white,
         title: Text(
           context.l10n.favorites,
           style: TextStyle(
